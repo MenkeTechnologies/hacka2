@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Phone implements Serializable {
     private static final long serialVersionUID = 1L;
+    @Id
     @Column(name = "PHONE_ID")
     private Integer phoneId;
 
