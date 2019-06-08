@@ -1,4 +1,15 @@
-USE puffride;
+use puffride;
+
+DROP TABLE IF EXISTS `PHONE`;
+CREATE TABLE `PHONE`
+(
+    `PHONE_ID`     int(11)      NOT NULL AUTO_INCREMENT,
+    `COUNTRY_CODE` int(2) UNSIGNED,
+    `AREA_CODE` int(2) UNSIGNED,
+    `DIGITS` int(10) UNSIGNED,
+    primary key (`PHONE_ID`)
+
+) ENGINE = InnoDB;
 
 DROP TABLE IF EXISTS `USER`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
@@ -20,15 +31,3 @@ CREATE TABLE `USER`
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 215
   DEFAULT CHARSET = latin1;
-
-
-CREATE TABLE `PHONE`
-(
-    `PHONE_ID`     int(11)      NOT NULL AUTO_INCREMENT,
-    `COUNTRY_CODE` int(2) UNSIGNED,
-    `AREA_CODE` int(2) UNSIGNED,
-    `DIGITS` int(10) UNSIGNED
-
-) ENGINE = InnoDB
-
-
