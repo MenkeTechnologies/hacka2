@@ -3,6 +3,7 @@ package com.puffride.demo.entity;
 import lombok.*;
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.print.attribute.standard.Destination;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -17,13 +18,13 @@ public class Schedule implements Serializable {
     @Column(name = "SCHEDULE_ID")
     private Integer schedule;
 
-    @ManyToOne
-    @JoinColumn(name = "ORIGIN_ID")
-    private Origin origin;
+    @OneToOne
+    @JoinColumn(name = "ORIGIN_ID", referencedColumnName = "LOCATION_ID")
+    private Location origin;
 
-    @ManyToOne
-    @JoinColumn(name = "DESTINATION_ID")
-    private Destination destination;
+    @OneToOne
+    @JoinColumn(name = "DESTINATION_ID", referencedColumnName = "LOCATION_ID")
+    private Location destination;
 
     @Column(name = "AMOUNT")
     private Integer amount;
