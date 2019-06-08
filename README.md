@@ -1,3 +1,2 @@
 # hacka2
-# Market
-# 
+# Business Idea
