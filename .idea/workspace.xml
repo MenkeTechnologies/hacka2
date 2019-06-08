@@ -1,7 +1,474 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8d3c9d5-5810-4a39-bf89-ac00ce5dafd8" name="Default Changelist" comment="" />
+    <list default="true" id="a8d3c9d5-5810-4a39-bf89-ac00ce5dafd8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/puff_ride/src/actions/simpleAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puff_ride/src/epics/simpleEpic.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puff_ride/src/reducers/rootReducer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puff_ride/src/reducers/simpleReducer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puff_ride/src/registerServiceWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puff_ride/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/.bin/node" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/bin/node" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/common.gypi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/config.gypi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/js_native_api.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/js_native_api_types.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/libplatform/libplatform-export.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/libplatform/libplatform.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/libplatform/v8-tracing.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/node.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/node_api.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/node_api_types.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/node_buffer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/node_object_wrap.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/node_version.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/aes.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/BSD-x86_64/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN32/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64-ARM/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64-ARM/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64-ARM/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64-ARM/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64-ARM/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/VC-WIN64A/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix-gcc/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/aix64-gcc/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin-i386-cc/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/darwin64-x86_64-cc/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-aarch64/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-armv4/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-elf/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-ppc64le/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x32/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux-x86_64/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux32-s390x/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/linux64-s390x/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris-x86-gcc/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/asm_avx2/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/asm_avx2/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/asm_avx2/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/asm_avx2/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/asm_avx2/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/no-asm/crypto/buildinf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/no-asm/crypto/include/internal/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/no-asm/crypto/include/internal/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/no-asm/include/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/archs/solaris64-x86_64-gcc/no-asm/include/progs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/asn1.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/asn1_mac.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/asn1err.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/asn1t.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/async.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/asyncerr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/bio.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/bioerr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/blowfish.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/bn.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/bn_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/bn_conf_asm.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/bn_conf_no-asm.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/bnerr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/buffer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/buffererr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/camellia.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/cast.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/cmac.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/cms.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/cmserr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/comp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/comperr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/conf_api.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/conferr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/crypto.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/cryptoerr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ct.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/cterr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/des.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/dh.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/dherr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/dsa.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/dsaerr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/dso_conf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/dso_conf_asm.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/dso_conf_no-asm.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/dtls1.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/e_os2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ebcdic.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ec.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ecdh.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ecdsa.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ecerr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/engine.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/engineerr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/err.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/evp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/evperr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/hmac.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/idea.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/kdf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/kdferr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/lhash.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/md2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/md4.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/md5.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/mdc2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/modes.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/obj_mac.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/objects.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/objectserr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ocsp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ocsperr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/opensslconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/opensslconf_asm.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/opensslconf_no-asm.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/opensslv.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ossl_typ.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/pem.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/pem2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/pemerr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/pkcs12.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/pkcs12err.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/pkcs7.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/pkcs7err.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/rand.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/rand_drbg.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/randerr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/rc2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/rc4.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/rc5.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ripemd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/rsa.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/rsaerr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/safestack.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/seed.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/sha.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/srp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/srtp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ssl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ssl2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ssl3.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/sslerr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/stack.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/store.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/storeerr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/symhacks.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/tls1.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ts.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/tserr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/txt_db.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/ui.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/uierr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/whrlpool.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/x509.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/x509_vfy.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/x509err.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/x509v3.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/openssl/x509v3err.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/aix.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/android-ifaddrs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/bsd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/darwin.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/errno.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/linux.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/os390.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/posix.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/stdint-msvc2008.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/sunos.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/threadpool.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/tree.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/unix.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/version.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/uv/win.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/v8-internal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/v8-platform.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/v8-profiler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/v8-testing.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/v8-util.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/v8-value-serializer-version.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/v8-version-string.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/v8-version.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/v8-wasm-trap-handler-posix.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/v8-wasm-trap-handler-win.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/v8.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/v8config.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/zconf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/include/node/zlib.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/share/doc/node/gdbinit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/share/doc/node/lldb_commands.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/share/man/man1/node.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node/node_modules/node-darwin-x64/share/systemtap/tapset/node.stp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puff_ride/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/puff_ride/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puff_ride/src/serviceWorker.js" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,33 +478,132 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/puff_ride/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/puff_ride/src/App.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/puff_ride/package.json">
+        <entry file="file://$PROJECT_DIR$/puff_ride/src/store.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="e#0#53#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/redux/index.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="230" column="2" selection-start-line="230" selection-start-column="2" selection-end-line="230" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/puff_ride/src/epics/simpleEpic.js">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/puff_ride/yarn.lock">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/puff_ride/src/reducers/simpleReducer">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/puff_ride/src/actions/simpleAction.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/puff_ride/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="13" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/puff_ride/src/registerServiceWorker.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="693">
+              <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/puff_ride/src/App.test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>export</find>
+      <find>createstor</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/puff_ride/src/reducers/rootReducer" />
+        <option value="$PROJECT_DIR$/puff_ride/src/reducers/simpleReducer" />
+        <option value="$PROJECT_DIR$/puff_ride/src/actions/simpleAction.js" />
+        <option value="$PROJECT_DIR$/puff_ride/src/App.js" />
+        <option value="$PROJECT_DIR$/puff_ride/src/reducers/rootReducer.js" />
+        <option value="$PROJECT_DIR$/puff_ride/src/serviceWorker.js" />
+        <option value="$PROJECT_DIR$/puff_ride/src/index.js" />
+        <option value="$PROJECT_DIR$/puff_ride/src/store.js" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -56,11 +622,6 @@
             <path>
               <item name="hacka2" type="b2602c69:ProjectViewProjectNode" />
               <item name="hacka2" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hacka2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hacka2" type="462c0819:PsiDirectoryNode" />
               <item name="puff_ride" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -72,11 +633,17 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560026410391" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560037650913" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/puff_ride" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -100,46 +667,46 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560022922479</updated>
-      <workItem from="1560022924026" duration="1259000" />
+      <workItem from="1560022924026" duration="5330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1259000" />
+    <option name="totallyTimeSpent" value="5330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32891566" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Designer" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24964234" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="4" />
+      <window_info anchor="bottom" id="TypeScript" order="5" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="8" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="SciView" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +726,110 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/puff_ride/package.json">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puff_ride/src/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puff_ride/src/login.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="4369" column="4" selection-start-line="4369" selection-start-column="4" selection-end-line="4369" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puff_ride/src/reducers/rootReducer">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puff_ride/src/actions/simpleAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puff_ride/src/epics/simpleEpic.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puff_ride/src/App.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puff_ride/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puff_ride/src/App.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/redux/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="230" column="2" selection-start-line="230" selection-start-column="2" selection-end-line="230" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puff_ride/src/reducers/rootReducer">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puff_ride/src/registerServiceWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puff_ride/src/reducers/simpleReducer">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puff_ride/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="13" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/puff_ride/src/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
