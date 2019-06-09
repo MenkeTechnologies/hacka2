@@ -16,3 +16,13 @@ export function signupActionCreator(name, email, password, biography) {
         ]
     }
 }
+
+export function schedulerActionCreator(dow, orig, des, time, start, end, driver) {
+    return {
+        type: 'SCHEDULE_ACTION',
+        payload: {
+            dow, orig, des, time, start, end, driver
+        }
+
+    }
+}
