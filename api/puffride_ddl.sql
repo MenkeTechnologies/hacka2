@@ -17,14 +17,14 @@ DROP TABLE IF EXISTS `USER`;
 CREATE TABLE `USER`
 (
     `USER_ID`             int(11)       NOT NULL AUTO_INCREMENT,
-    `NAME`                varchar(150)  NOT NULL,
-    `PROFILE_PICTURE`     varchar(250)  NOT NULL,
-    `PW_HASH`             varchar(400)  NOT NULL,
+    `NAME`                varchar(150)  NULL,
+    `PROFILE_PICTURE`     varchar(250)  NULL,
+    `PW_HASH`             varchar(400)  NULL,
     `EMAIL`               varchar(400)  NOT NULL,
-    `BIO`                 varchar(1000) NOT NULL,
-    `EMAIL_VERIFIED_FLAG` varchar(1)    NOT NULL DEFAULT 'N',
+    `BIO`                 varchar(1000) NULL,
+    `EMAIL_VERIFIED_FLAG` varchar(1)    NULL DEFAULT 'N',
     `PHONE_ID`            int(11),
-    `CREATE_DATE`         datetime      NOT NULL,
+    `CREATE_DATE`         datetime      NULL,
     `UPDATE_DATE`         timestamp     NULL     DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (`USER_ID`),
     FOREIGN KEY (`PHONE_ID`) REFERENCES `PHONE` (`PHONE_ID`) ON DELETE CASCADE ON UPDATE NO ACTION
@@ -56,7 +56,7 @@ CREATE TABLE `LOCATION`
     `LATITUDE`             double       NOT NULL,
     `LONGITUDE`            double       NOT NULL,
     `ICON`                 varchar(400) NOT NULL,
-    `CREATE_DATE`          datetime     NOT NULL,
+    `CREATE_DATE`          datetime     NULL,
     `UPDATE_DATE`          timestamp    NULL     DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (`LOCATION_ID`)
 ) ENGINE = InnoDB;
