@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
+import {Redirect} from "react-router-dom"
 import './App.css';
 import {SignUp} from './SignUp'
 import {Login} from './Login'
+<<<<<<< HEAD
 import {Schedule} from './Schedule'
+=======
+import {DashBoard} from './DashBoard'
+import { simpleAction } from './actions/simpleAction'
+>>>>>>> 6824041d982ba8dbb81589b715e0d7b1c69fab14
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -14,10 +20,14 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {makeStyles} from '@material-ui/core/styles';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
+import {Ride} from './Ride'
+import history from './history'
 
 
 let baseUrl = "http://10.248.35.68:8080";
 let contextPath = "/puffride/api/v1";
+let unmatchedSchedulesApi = "/schedule/findSchedulesWithNoRidesByEmail";
+let matchedSchedulesApi = "/schedule/findSchedulesWithRidesByEmail";
 
 function fetchPostWrapper(body, endpoint) {
     fetch(baseUrl + contextPath + endpoint, {
@@ -28,7 +38,9 @@ function fetchPostWrapper(body, endpoint) {
         body: JSON.stringify(body)
     })
         .then((res) => res.json()).then((resp) => {
-        console.log('\n_____________=', resp, '_____________\n');
+        // console.log('\n_____________=', resp, '_____________\n');
+        console.log(resp)
+        return (resp);
     });
 }
 
@@ -44,8 +56,55 @@ const mapDispatchToProps = (dispatch) => ({
             email: email,
             password: password
         };
-        fetchPostWrapper(body, "/user/findByEmail");
+        fetch(baseUrl + contextPath + "/user/findByEmail", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        })
+            .then((res) => res.json()).then((resp) => {
+            // console.log('\n_____________=', resp, '_____________\n');
+            console.log(resp)
 
+            // this.props.history.push('/DashBoard')
+            if(resp.length > 0){
+                console.log("user found")
+                // this.props.history.push('/DashBoard')
+                dispatch({type:"LOGGED_IN", payload: resp});
+
+                let body = {
+                  email: email
+                };
+                fetch(baseUrl + contextPath + unmatchedSchedulesApi, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(body)
+                })
+                  .then((res) => res.json()).then((resp) => {
+                    console.log("transfering data to reducer")
+                    dispatch({type:"DASH_UNMATCHED", payload: resp});
+                  });
+                fetch(baseUrl + contextPath + matchedSchedulesApi, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(body)
+                })
+                  .then((res) => res.json()).then((resp) => {
+                    console.log("transfering data to reducer")
+                    dispatch({type:"DASH_MATCHED", payload: resp});
+                    return history.push('/DashBoard')
+                  });
+                }
+                
+            });
+        // if(response.length > 0){
+        //     this.props.history.push('/foo')
+        // }
         return dispatch({type: "LOGIN"})
     },
     signUpDispatch: (e, name, email, password, biography) => (dispatch({
@@ -55,7 +114,7 @@ const mapDispatchToProps = (dispatch) => ({
             password: password,
             biography: biography
         }
-    }))
+    })),
 });
 
 /* 
@@ -85,6 +144,10 @@ const ScheduleWithState = connect(mapStateToProps, mapDispatchToProps)(({signUpD
     return <Schedule ScheduleAction={ScheduleWithState}/>
 })
 
+const DashBoardWithState = connect(mapStateToProps, mapDispatchToProps)(({dashDispatch, simpleReducer}) => {
+    console.log("dash boarding hello")
+    return <DashBoard dashAction={dashDispatch} state = {simpleReducer}/>
+})
 
 const useStyles = makeStyles(theme => ({
     '@global': {
@@ -109,9 +172,13 @@ const useStyles = makeStyles(theme => ({
     submit: {
         margin: theme.spacing(3, 0, 2),
     },
+
 }));
 
 
+const RideWithState = connect(mapStateToProps, mapDispatchToProps)(({simpleReducer})=>{
+    return <Ride state = {simpleReducer}/>
+})
 /**
  * @class App
  * @extends {Component}
@@ -168,10 +235,12 @@ class App extends Component {
                         </Link>
                     </Toolbar>
                 </AppBar>
+                <Route path = "/DashBoard" component={DashBoardWithState}/>
                 <Route path="/SignUp" component={SignUpWithState}/>
                 <Route path="/Login" component={LoginWithState}/>
                 <Route path="/Schedule" component={ScheduleWithState}/>
                 <Route exact path="/" component={LoginWithState}/>
+                <Route path = "/Ride" component={RideWithState}/>
             </Router>
         </div>
     }
