@@ -12,6 +12,7 @@ import {Link} from "react-router-dom";
 import Toolbar from "@material-ui/core/Toolbar";
 import Avatar from "@material-ui/core/Avatar";
 import puff from './img/puff.png';
+import { Redirect } from "react-router-dom";
 
 function MadeWithLove() {
   return (
@@ -52,7 +53,7 @@ const useStyles = makeStyles(theme => ({
 
 export const Login = ({state, emailAction, passAction, loginAction}) => {
   const classes = useStyles();
-  return (
+  return state.status === "logged in" ? (<Redirect to='/DashBoard'/>):(
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>

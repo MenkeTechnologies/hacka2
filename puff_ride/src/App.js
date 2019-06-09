@@ -5,6 +5,7 @@ import {Redirect} from "react-router-dom"
 import './App.css';
 import {SignUp} from './SignUp'
 import {Login} from './Login'
+import {Schedule} from './Schedule'
 import {DashBoard} from './DashBoard'
 import { simpleAction } from './actions/simpleAction'
 import AppBar from "@material-ui/core/AppBar";
@@ -24,6 +25,7 @@ let baseUrl = "http://10.248.35.68:8080";
 let contextPath = "/puffride/api/v1";
 let unmatchedSchedulesApi = "/schedule/findSchedulesWithNoRidesByEmail";
 let matchedSchedulesApi = "/schedule/findSchedulesWithRidesByEmail";
+let scheduleApi = "/schedule"
 
 function fetchPostWrapper(body, endpoint) {
     fetch(baseUrl + contextPath + endpoint, {
@@ -60,7 +62,6 @@ const mapDispatchToProps = (dispatch) => ({
             body: JSON.stringify(body)
         })
             .then((res) => res.json()).then((resp) => {
-            // console.log('\n_____________=', resp, '_____________\n');
             console.log(resp)
 
             // this.props.history.push('/DashBoard')
@@ -72,35 +73,35 @@ const mapDispatchToProps = (dispatch) => ({
                 let body = {
                   email: email
                 };
-                fetch(baseUrl + contextPath + unmatchedSchedulesApi, {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify(body)
-                })
-                  .then((res) => res.json()).then((resp) => {
-                    console.log("transfering data to reducer")
-                    dispatch({type:"DASH_UNMATCHED", payload: resp});
-                  });
-                fetch(baseUrl + contextPath + matchedSchedulesApi, {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify(body)
-                })
-                  .then((res) => res.json()).then((resp) => {
-                    console.log("transfering data to reducer")
-                    dispatch({type:"DASH_MATCHED", payload: resp});
-                    return history.push('/DashBoard')
-                  });
+                Promise.all([
+                    fetch(baseUrl + contextPath + unmatchedSchedulesApi, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(body)
+                    })
+                        .then((res) => res.json())
+                        .then((resp) => {
+                            console.log("transfering data to reducer", resp)
+                            dispatch({type:"DASH_UNMATCHED", payload: resp});
+                        }),
+                    fetch(baseUrl + contextPath + matchedSchedulesApi, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(body)
+                    })
+                        .then((res) => res.json())
+                        .then((resp) => {
+                            console.log("transfering data to reducer 1", resp)
+                            dispatch({type:"DASH_MATCHED", payload: resp});
+                        })
+                ]).then((value) => {console.log("finished")})
                 }
                 
             });
-        // if(response.length > 0){
-        //     this.props.history.push('/foo')
-        // }
         return dispatch({type: "LOGIN"})
     },
     signUpDispatch: (e, name, email, password, biography) => (dispatch({
@@ -111,6 +112,128 @@ const mapDispatchToProps = (dispatch) => ({
             biography: biography
         }
     })),
+    dashDispatch: (e, email, scheduleid) => {
+        console.log("Dash Dispatch!", scheduleid)
+        let body = {
+            email: email
+        };
+        fetch(baseUrl + contextPath + "/schedule/findRidesByEmail", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        }).then((res) => res.json())
+            .then((resp) => {
+                console.log("dash dispatch", resp)
+                var rides = resp.filter(item => item.schedule.schedule === scheduleid);
+                console.log("rides: ", rides)
+                dispatch({type:"RIDE_ACTION", payload: rides});
+            })
+    },
+    scheduleDispatch: (dow, orig, des, time, start, end, driver) => (dispatch({
+        type: "SCHEDULE_ACTION", value : {
+            dow, orig, des, time, start, end, driver
+        }
+    })),
+    addScheduleDispatch: (e) => (dispatch({type:"NEW_SCHEDULE"})),
+    backToDashboard: (e, user_id, email, dow, orig, des, time, start, end, driver) => {
+
+        let body = {
+            email: email,
+            password: " "
+        };
+
+        var timeVal = new Date().getTime();
+        var date = new Date(timeVal);
+
+        let body1 = {
+            amount: 0,
+            createDate: date,
+            "creator": {
+                "bio": "string",
+                "createDate": date,
+                "email": email,
+                "emailVerifiedFlag": "string",
+                "name": "string",
+                "phone": {
+                  "areaCode": 0,
+                  "countryCode": 0,
+                  "createDate": date,
+                  "digits": 0,
+                  "phoneId": 0,
+                  "updateDate": date
+                },
+                "profilePicture": "string",
+                "pwHash": "string",
+                "updateDate": date,
+                "user": user_id,
+              },
+            destination: {
+                createDate: date,
+                driverVerifiedFlag: "Y",
+                icon: "",
+                location: 1,
+                updateDate: date
+            },
+            dow: dow,
+            endDate: new Date(end),
+            origin: {
+                createDate: date,
+                driverVerifiedFlag: "Y",
+                icon: "",
+                location: 1,
+                updateDate: date
+            },
+            schedule: 0,
+            startDate: new Date(start),
+            timeOfDay: time += ":00",
+            updateDate: date
+        };
+
+        console.log(JSON.stringify(body1))
+
+        fetch(baseUrl+contextPath+scheduleApi,{
+            method:'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body1)
+        }).then((res) => res.json())
+            .then((resp)=> {
+                console.log( "shit happened", resp)
+            }).then(resp=>{
+
+                Promise.all([
+                fetch(baseUrl + contextPath + unmatchedSchedulesApi, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                })
+                    .then((res) => res.json())
+                    .then((resp) => {
+                        console.log("transfering data to reducer", resp)
+                        dispatch({type:"DASH_UNMATCHED", payload: resp});
+                    }),
+                fetch(baseUrl + contextPath + matchedSchedulesApi, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                })
+                    .then((res) => res.json())
+                    .then((resp) => {
+                        console.log("transfering data to reducer 1", resp)
+                        dispatch({type:"DASH_MATCHED", payload: resp});
+                    })
+            ]).then((value) => {console.log("finished")})
+        })
+
+        return (dispatch({type:"BACK_TO_DASHBOARD"}))
+    }
 });
 
 /* 
@@ -134,9 +257,16 @@ const SignUpWithState = connect(mapStateToProps, mapDispatchToProps)(({signUpDis
     return <SignUp signUpAction={signUpDispatch}/>
 })
 
-const DashBoardWithState = connect(mapStateToProps, mapDispatchToProps)(({dashDispatch, simpleReducer}) => {
+// Schedule wrapper
+const ScheduleWithState = connect(mapStateToProps, mapDispatchToProps)(({scheduleDispatch, backToDashboard, simpleReducer}) => {
+    console.log("Schedule board hello")
+    return <Schedule scheduleAction={scheduleDispatch} backToDashboard={backToDashboard} state={simpleReducer}/>
+})
+
+const DashBoardWithState = connect(mapStateToProps, mapDispatchToProps)(({dashDispatch,addScheduleDispatch, simpleReducer}) => {
     console.log("dash boarding hello")
-    return <DashBoard dashAction={dashDispatch} state = {simpleReducer}/>
+    console.log(simpleReducer)
+    return <DashBoard dashAction={dashDispatch} state = {simpleReducer} addSchedule={addScheduleDispatch}/>
 })
 
 const useStyles = makeStyles(theme => ({
@@ -190,7 +320,7 @@ class App extends Component {
             textDecoration: "none"
         };
         return <div>
-            <Router>
+            <Router history={history}>
                 <AppBar position="static">
                     <Toolbar>
                         <IconButton edge="start" color="inherit" aria-label="Menu">
@@ -228,6 +358,7 @@ class App extends Component {
                 <Route path = "/DashBoard" component={DashBoardWithState}/>
                 <Route path="/SignUp" component={SignUpWithState}/>
                 <Route path="/Login" component={LoginWithState}/>
+                <Route path="/Schedule" component={ScheduleWithState}/>
                 <Route exact path="/" component={LoginWithState}/>
                 <Route path = "/Ride" component={RideWithState}/>
             </Router>

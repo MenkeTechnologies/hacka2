@@ -3,6 +3,7 @@ import Map from './map';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
+import JSONTree from 'react-json-tree'
 
 
 import Button from '@material-ui/core/Button';
@@ -74,7 +75,6 @@ const useStyles = makeStyles(theme => ({
     },
     paper: {
         padding: theme.spacing(2),
-        textAlign: 'center',
         color: theme.palette.text.secondary,
     }
 }));
@@ -90,7 +90,7 @@ export const Ride = ({state}) => {
             <div className={classes.heroContent}>
                 <Container maxWidth="sm">
                     <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                        This ride
+                        Details for Selected Schedule
                     </Typography>
                 </Container>
             </div>
@@ -132,17 +132,19 @@ export const Ride = ({state}) => {
                         <Grid item xs={12}>
                             <Container maxWidth ="sm">
                                 <Typography style={{"font-size": "2.5rem"}} component="h5" variant="h2" align="center" color="textPrimary" gutterBottom>
-                                    Riders
+                                    Rides
                                 </Typography>
                             </Container>
                         </Grid>
                         <Button to="/SignUp" variant="contained" color="primary">
-                            Notify Riders
+                            Cancel Schedule
                         </Button>
                         {
                             state.ride.map((item,idx)=>
                                 <Grid item xs={12}>
-                                    <Paper className={classes.paper}>{item}</Paper>
+                                    <Paper className={classes.paper}>
+                                        <JSONTree data={item}/>
+                                    </Paper>
                                 </Grid>
                             )
                         }

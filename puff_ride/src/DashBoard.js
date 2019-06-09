@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
+import { Redirect } from "react-router-dom";
 
 function MadeWithLove() {
   return (
@@ -59,11 +60,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export const DashBoard = ({dashAction, state}) => {
+export const DashBoard = ({dashAction, state, addSchedule}) => {
   const classes = useStyles();
-  console.log(state)
+  console.log(state);
 
-  return (
+  return state.status === "new_schedule"? (<Redirect to='Schedule'/>):(state.status === "ride" ? (<Redirect to='/Ride'/>) : (
     <React.Fragment>
       <CssBaseline />
       <main>
@@ -76,7 +77,7 @@ export const DashBoard = ({dashAction, state}) => {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button to="/SignUp" variant="contained" color="primary">
+                  <Button to="/SignUp" variant="contained" color="primary" onClick={addSchedule}>
                     Request Ride
                   </Button>
                 </Grid>
@@ -88,7 +89,7 @@ export const DashBoard = ({dashAction, state}) => {
           {/* End hero unit */}
           <Grid container spacing={4}>
             {state.matched.map(card => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+              <Grid item key={card.schedule} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
@@ -97,20 +98,20 @@ export const DashBoard = ({dashAction, state}) => {
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                       {card}
+                       From: {card.origin.location}
                     </Typography>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {card}
+                        To: {card.destination.location}
                     </Typography>
                     <Typography>
-                        8:00 AM / M,T,W,Th,Fr,Sa,Su
+                        {card.timeOfDay} / M,T,W,Th,Fr
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
+                    <Button onClick={(e) => dashAction(e, state.user_info[0].email, card.schedule)} size="small" color="primary">
                       View
                     </Button>
-                    <FontAwesomeIcon icon={faCheckCircle}/>
+                    <FontAwesomeIcon size="1.5x" icon={faCheckCircle}/>
                   </CardActions>
                 </Card>
               </Grid>
@@ -118,7 +119,7 @@ export const DashBoard = ({dashAction, state}) => {
           </Grid>
           <Grid container spacing={4}>
             {state.unmatched.map(card => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+              <Grid item key={card.schedule} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
@@ -127,20 +128,19 @@ export const DashBoard = ({dashAction, state}) => {
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                       {card}
+                        From: {card.origin.location}
                     </Typography>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {card}
+                        To: {card.destination.location}
                     </Typography>
                     <Typography>
                         8:00 AM / M,T,W,Th,Fr,Sa,Su
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
+                    <Button onClick={(e) => dashAction(e, state.user_info[0].email, card.schedule)} size="small" color="primary">
                       View
                     </Button>
-                    <FontAwesomeIcon icon={faCheckCircle}/>
                   </CardActions>
                 </Card>
               </Grid>
@@ -160,5 +160,5 @@ export const DashBoard = ({dashAction, state}) => {
       </footer>
       {/* End footer */}
     </React.Fragment>
-  );
+  ));
 }
