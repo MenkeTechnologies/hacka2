@@ -59,8 +59,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export const DashBoard = ({state}) => {
+export const DashBoard = ({dashAction, state}) => {
   const classes = useStyles();
+  console.log(state)
 
   return (
     <React.Fragment>
