@@ -78,6 +78,11 @@ export default (state = {}, action) => {
         ...state,
         status: "dashboard"
       }
+    case 'FINDMATCHING':
+      return{
+        ...state,
+        matched_schedules:action.payload
+      }
     default:
       if(state.status ==="logged in"){
         return{
@@ -87,7 +92,8 @@ export default (state = {}, action) => {
         status: "not logged in",
         ride: ['usera', 'userb', 'userc'],
         matched: [],
-        unmatched:[]
+        unmatched:[],
+        matched_schedules:[]
       };
     }
   }
