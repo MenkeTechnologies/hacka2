@@ -17,6 +17,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 import {Ride} from './Ride'
+import history from './history'
 
 
 let baseUrl = "http://10.248.35.68:8080";
@@ -66,14 +67,28 @@ const mapDispatchToProps = (dispatch) => ({
             if(resp.length > 0){
                 console.log("user found")
                 // this.props.history.push('/DashBoard')
-                return dispatch({type:"LOGGED_IN", payload: resp});
-            }
-        });
+                dispatch({type:"LOGGED_IN", payload: resp});
 
+                let body = {
+                  email: email
+                };
+                fetch(baseUrl + contextPath + matchedSchedulesApi, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(body)
+                })
+                  .then((res) => res.json()).then((resp) => {
+                    console.log("transfering data to reducer")
+                    dispatch({type:"DASH_UNMATCHED", payload: resp});
+                    return history.push('/DashBoard')
+                  });
+                }
+            });
         // if(response.length > 0){
         //     this.props.history.push('/foo')
         // }
-
         return dispatch({type: "LOGIN"})
     },
     signUpDispatch: (e, name, email, password, biography) => (dispatch({
@@ -84,10 +99,6 @@ const mapDispatchToProps = (dispatch) => ({
             biography: biography
         }
     })),
-    // dashDispatch: (e) = {
-    //     fetch(baseUrl + contextPath + unmatchedSchedulesApi) //FIX ME: call api to query all matched rides and pending rides to dashboard)
-
-    // },
 });
 
 /* 
