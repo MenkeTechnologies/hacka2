@@ -110,6 +110,25 @@ const mapDispatchToProps = (dispatch) => ({
             biography: biography
         }
     })),
+    dashDispatch: (e, email, scheduleid) => {
+        console.log("Dash Dispatch!", scheduleid)
+        let body = {
+            email: email
+        };
+        fetch(baseUrl + contextPath + "/schedule/findRidesByEmail", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        }).then((res) => res.json())
+            .then((resp) => {
+                console.log("dash dispatch", resp)
+                var rides = resp.filter(item => item.schedule.schedule === scheduleid);
+                console.log("rides: ", rides)
+                dispatch({type:"RIDE_ACTION", payload: rides});
+            })
+    }
 });
 
 /* 
