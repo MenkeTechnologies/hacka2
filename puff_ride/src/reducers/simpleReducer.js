@@ -30,14 +30,14 @@ export default (state = {}, action) => {
       console.log("Dash matched triggered")
       return {
         ...state,
-        unmatched: action.payload
+        matched: action.payload
       };
     case 'DASH_UNMATCHED':
       console.log("Dash unmatched triggered")
       console.log(action.payload)
       return {
         ...state,
-        matched: action.payload
+        unmatched: action.payload
       };
     case 'LOGGED_IN':
       console.log("logging in")
@@ -45,6 +45,13 @@ export default (state = {}, action) => {
         ...state,
         user_info: action.payload,
         status: "logged in"
+      }
+    case 'RIDE_ACTION':
+      console.log("ride action in reducer");
+      return{
+        ...state,
+        status: "ride",
+        ride: action.payload
       }
     default:
       if(state.status ==="logged in"){
