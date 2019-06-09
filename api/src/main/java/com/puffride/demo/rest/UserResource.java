@@ -1,5 +1,6 @@
 package com.puffride.demo.rest; 
 
+import com.puffride.demo.entity.Schedule;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -23,6 +24,7 @@ public class UserResource {
         List<User> users = dao.findAll().stream().filter(user -> user.getEmail().equalsIgnoreCase(authObj.getEmail())).collect(Collectors.toList());
         return users;
     }
+
     @GetMapping
     public List<User> readAll(){
         List<User> users = dao.findAll();
