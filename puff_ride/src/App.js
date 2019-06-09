@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import SignUp from './SignUp'
+import Login from './Login'
 
 import { simpleAction } from './actions/simpleAction'
 
@@ -37,10 +38,21 @@ class App extends Component {
 
   render() {
       return<Router>
-          <Route path = "/login" component={SignUp}/>
+          <Route path = "/SignUp" component={SignUp}/>
+          <Route path = "/" component={Login}/>
       </Router>
 
     // if(this.props.simpleReducer.status === "not logged in"){
+    //   return <SignUp/>
+    // }
+    // else{
+    //   return <div> HEllO WORLD! </div>
+    // }
+    //   return <SignUp/>
+    // }
+    // else{
+    //   return <div> HEllO WORLD! </div>
+    // }
     //   return <SignUp/>
     // }
     // else{
