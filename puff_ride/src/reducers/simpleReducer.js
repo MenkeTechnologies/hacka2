@@ -40,6 +40,10 @@ export default (state = {}, action) => {
         matched: action.payload
       };
     case 'SCHEDULE_ACTION':
+      console.log("Scheudle action issued")
+      console.log(action.value.time)
+      console.log(action.value.des)
+      console.log(action.value.dow)
       return {
         ...state,
         dow : action.value.dow,
@@ -65,8 +69,8 @@ export default (state = {}, action) => {
       }else{return {
         status: "not logged in",
         ride: ['usera', 'userb', 'userc'],
-        matched: [],
-        unmatched:[]
+        matched: ['schedule1', 'schedule2', 'schedule3'],
+        unmatched:['schedule4', 'schedule5', 'schedule6']
       };
     }
   }

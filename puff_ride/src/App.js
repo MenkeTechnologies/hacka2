@@ -59,8 +59,8 @@ const mapDispatchToProps = (dispatch) => ({
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(body)
-        })
-            .then((res) => res.json()).then((resp) => {
+        }).then((res) => res.json()).then((resp) => {
+            // console.log('\n_____________=', resp, '_____________\n');
             console.log(resp)
 
             // this.props.history.push('/DashBoard')
@@ -72,35 +72,35 @@ const mapDispatchToProps = (dispatch) => ({
                 let body = {
                   email: email
                 };
-                Promise.all([
-                    fetch(baseUrl + contextPath + unmatchedSchedulesApi, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(body)
-                    })
-                        .then((res) => res.json())
-                        .then((resp) => {
-                            console.log("transfering data to reducer", resp)
-                            dispatch({type:"DASH_UNMATCHED", payload: resp});
-                        }),
-                    fetch(baseUrl + contextPath + matchedSchedulesApi, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(body)
-                    })
-                        .then((res) => res.json())
-                        .then((resp) => {
-                            console.log("transfering data to reducer 1", resp)
-                            dispatch({type:"DASH_MATCHED", payload: resp});
-                        })
-                ]).then((value) => {console.log("finished")})
+                fetch(baseUrl + contextPath + unmatchedSchedulesApi, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(body)
+                })
+                  .then((res) => res.json()).then((resp) => {
+                    console.log("transfering data to reducer")
+                    dispatch({type:"DASH_UNMATCHED", payload: resp});
+                  });
+                fetch(baseUrl + contextPath + matchedSchedulesApi, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(body)
+                })
+                  .then((res) => res.json()).then((resp) => {
+                    console.log("transfering data to reducer")
+                    dispatch({type:"DASH_MATCHED", payload: resp});
+                    return history.push('/DashBoard')
+                  });
                 }
                 
             });
+        // if(response.length > 0){
+        //     this.props.history.push('/foo')
+        // }
         return dispatch({type: "LOGIN"})
     },
     signUpDispatch: (e, name, email, password, biography) => (dispatch({
@@ -147,7 +147,6 @@ const ScheduleWithState = connect(mapStateToProps, mapDispatchToProps)(({schedul
 
 const DashBoardWithState = connect(mapStateToProps, mapDispatchToProps)(({dashDispatch, simpleReducer}) => {
     console.log("dash boarding hello")
-    console.log(simpleReducer)
     return <DashBoard dashAction={dashDispatch} state = {simpleReducer}/>
 })
 
@@ -202,7 +201,7 @@ class App extends Component {
             textDecoration: "none"
         };
         return <div>
-            <Router history={history}>
+            <Router>
                 <AppBar position="static">
                     <Toolbar>
                         <IconButton edge="start" color="inherit" aria-label="Menu">
