@@ -72,7 +72,7 @@ const mapDispatchToProps = (dispatch) => ({
                 let body = {
                   email: email
                 };
-                fetch(baseUrl + contextPath + matchedSchedulesApi, {
+                fetch(baseUrl + contextPath + unmatchedSchedulesApi, {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json'
@@ -82,9 +82,21 @@ const mapDispatchToProps = (dispatch) => ({
                   .then((res) => res.json()).then((resp) => {
                     console.log("transfering data to reducer")
                     dispatch({type:"DASH_UNMATCHED", payload: resp});
+                  });
+                fetch(baseUrl + contextPath + matchedSchedulesApi, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(body)
+                })
+                  .then((res) => res.json()).then((resp) => {
+                    console.log("transfering data to reducer")
+                    dispatch({type:"DASH_MATCHED", payload: resp});
                     return history.push('/DashBoard')
                   });
                 }
+                
             });
         // if(response.length > 0){
         //     this.props.history.push('/foo')
