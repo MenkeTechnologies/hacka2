@@ -13,6 +13,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {makeStyles} from '@material-ui/core/styles';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
+import {Ride} from './Ride'
+
 
 let baseUrl = "http://10.248.35.68:8080";
 let contextPath = "/puffride/api/v1";
@@ -89,6 +91,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
+const RideWithState = connect(mapStateToProps, mapDispatchToProps)(({simpleReducer})=>{
+    return <Ride state = {simpleReducer}/>
+})
 /**
  * @class App
  * @extends {Component}
@@ -147,6 +152,7 @@ class App extends Component {
                 <Route path="/SignUp" component={SignUpWithState}/>
                 <Route path="/Login" component={LoginWithState}/>
                 <Route exact path="/" component={LoginWithState}/>
+                <Route path = "/Ride" component={RideWithState}/>
             </Router>
         </div>
     }
