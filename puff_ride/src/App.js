@@ -14,6 +14,8 @@ import {makeStyles} from '@material-ui/core/styles';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 
+let baseUrl = "http://10.248.35.68:8080";
+let contextPath = "/puffride/api/v1";
 
 /* 
  * mapDispatchToProps
@@ -21,7 +23,15 @@ import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 const mapDispatchToProps = (dispatch) => ({
     emailOnChange: (e) => (dispatch({type: "EMAIL_UPDATE", email: e.target.value})),
     passOnChange: (e) => (dispatch({type: "PASS_UPDATE", pass: e.target.value})),
-    loginDispatch: (e) => (dispatch({type: "LOGIN"})),
+    loginDispatch: (e) => {
+
+        fetch(baseUrl + contextPath + "/user/findByEmail?email=caden.bergnaum%40example.net")
+            .then((res)=>res.json()).then((res2)=>{
+               console.log('\n_____________=', res2, '_____________\n');
+            })
+
+        return dispatch({type: "LOGIN"})
+    },
     signUpDispatch: (e, name, email, password, biography) => (dispatch({
         type: "SIGNUP_ACTION", value: {
             name: name,
