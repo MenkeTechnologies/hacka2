@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.print.attribute.standard.Destination;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "SCHEDULE")
@@ -28,6 +29,9 @@ public class Schedule implements Serializable {
 
     @Column(name = "AMOUNT")
     private Integer amount;
+
+    @Column(name = "TIME_OF_DAY")
+    private LocalTime timeOfDay;
 
     @Column(name = "DOW")
     private Integer dow;
