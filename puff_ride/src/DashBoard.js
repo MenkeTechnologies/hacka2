@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
+import { Redirect } from "react-router-dom";
 
 function MadeWithLove() {
   return (
@@ -63,7 +64,7 @@ export const DashBoard = ({dashAction, state}) => {
   const classes = useStyles();
   console.log(state);
 
-  return (
+  return state.status === "ride" ? (<Redirect to='/Ride'/>) : (
     <React.Fragment>
       <CssBaseline />
       <main>
@@ -97,17 +98,17 @@ export const DashBoard = ({dashAction, state}) => {
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                       {card.origin.location}
+                       From: {card.origin.location}
                     </Typography>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {card.destination.location}
+                        To: {card.destination.location}
                     </Typography>
                     <Typography>
                         {card.timeOfDay} / M,T,W,Th,Fr
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button onClick={(e) => dashAction(e, state.email)} size="small" color="primary">
+                    <Button onClick={(e) => dashAction(e, state.user_info[0].email, card.schedule)} size="small" color="primary">
                       View
                     </Button>
                     <FontAwesomeIcon size="1.5x" icon={faCheckCircle}/>
@@ -127,17 +128,17 @@ export const DashBoard = ({dashAction, state}) => {
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {card.origin.location}
+                        From: {card.origin.location}
                     </Typography>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {card.destination.location}
+                        To: {card.destination.location}
                     </Typography>
                     <Typography>
                         8:00 AM / M,T,W,Th,Fr,Sa,Su
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button onClick={(e) => dashAction(e, state.email)} size="small" color="primary">
+                    <Button onClick={(e) => dashAction(e, state.user_info[0].email, card.schedule)} size="small" color="primary">
                       View
                     </Button>
                   </CardActions>
