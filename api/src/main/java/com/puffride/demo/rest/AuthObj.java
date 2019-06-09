@@ -10,5 +10,11 @@ import lombok.NoArgsConstructor;
 public class AuthObj {
     private String email;
     private String password;
+}
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+class EmailObj {
+    private String email;
 }
