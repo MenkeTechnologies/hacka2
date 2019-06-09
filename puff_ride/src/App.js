@@ -46,7 +46,6 @@ class App extends Component {
   render() {
       return<Router>
           <Route path = "/SignUp" component={SignUp}/>
-
           <Route path = "/" component={LoginWithState}/>
       </Router>
   }
