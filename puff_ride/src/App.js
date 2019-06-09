@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
+import {Redirect} from "react-router-dom"
 import './App.css';
 import {SignUp} from './SignUp'
 import {Login} from './Login'
@@ -23,18 +24,55 @@ let contextPath = "/puffride/api/v1";
 let unmatchedSchedulesApi = "/schedule/findSchedulesWithNoRidesByEmail";
 let matchedSchedulesApi = "/schedule/findSchedulesWithRidesByEmail";
 
-/* 
+function fetchPostWrapper(body, endpoint) {
+    fetch(baseUrl + contextPath + endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    })
+        .then((res) => res.json()).then((resp) => {
+        // console.log('\n_____________=', resp, '_____________\n');
+        console.log(resp)
+        return (resp);
+    });
+}
+
+/*
  * mapDispatchToProps
 */
 const mapDispatchToProps = (dispatch) => ({
     emailOnChange: (e) => (dispatch({type: "EMAIL_UPDATE", email: e.target.value})),
     passOnChange: (e) => (dispatch({type: "PASS_UPDATE", pass: e.target.value})),
-    loginDispatch: (e) => {
+    loginDispatch: (e, email, password) => {
 
-        fetch(baseUrl + contextPath + "/user/findByEmail?email=caden.bergnaum%40example.net")
-            .then((res)=>res.json()).then((res2)=>{
-               console.log('\n_____________=', res2, '_____________\n');
-            })
+        let body = {
+            email: email,
+            password: password
+        };
+        fetch(baseUrl + contextPath + "/user/findByEmail", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        })
+            .then((res) => res.json()).then((resp) => {
+            // console.log('\n_____________=', resp, '_____________\n');
+            console.log(resp)
+
+            // this.props.history.push('/DashBoard')
+            if(resp.length > 0){
+                console.log("user found")
+                // this.props.history.push('/DashBoard')
+                return dispatch({type:"LOGGED_IN", payload: resp});
+            }
+        });
+
+        // if(response.length > 0){
+        //     this.props.history.push('/foo')
+        // }
 
         return dispatch({type: "LOGIN"})
     },
@@ -101,6 +139,7 @@ const useStyles = makeStyles(theme => ({
     submit: {
         margin: theme.spacing(3, 0, 2),
     },
+
 }));
 
 
@@ -134,6 +173,7 @@ class App extends Component {
                         <IconButton edge="start" color="inherit" aria-label="Menu">
                             <MenuIcon/>
                         </IconButton>
+
                         <Typography variant="h6">
                             PuffRide
                         </Typography>
