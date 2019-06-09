@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import './App.css';
 import {SignUp} from './SignUp'
 import {Login} from './Login'
+import DashBoard from './DashBoard'
 import { simpleAction } from './actions/simpleAction'
 
 /* 
@@ -38,6 +39,7 @@ const SignUpWithState = connect(mapStateToProps, mapDispatchToProps)(({signUpDis
   console.log("sign up action invoked")
   return <SignUp signUpAction={signUpDispatch}/>
 })
+
 /**
  * @class App
  * @extends {Component}
@@ -55,6 +57,7 @@ class App extends Component {
       return<Router>
           <Route path = "/SignUp" component={SignUpWithState}/>
           <Route path = "/Login" component={LoginWithState}/>
+          <Route path = "/DashBoard" component={DashBoard}/>
       </Router>
   }
 }
