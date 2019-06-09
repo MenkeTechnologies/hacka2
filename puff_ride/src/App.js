@@ -137,50 +137,69 @@ const mapDispatchToProps = (dispatch) => ({
         }
     })),
     addScheduleDispatch: (e) => (dispatch({type:"NEW_SCHEDULE"})),
-    backToDashboard: (e, email, dow, orig, des, time, start, end, driver) => {
-        console.log("back to dash!")
+    backToDashboard: (e, user_id, email, dow, orig, des, time, start, end, driver) => {
 
         let body = {
-            email: email
+            email: email,
+            password: " "
         };
+
+        var timeVal = new Date().getTime();
+        var date = new Date(timeVal);
 
         let body1 = {
             amount: 0,
-            createDate: "0",
+            createDate: date,
+            "creator": {
+                "bio": "string",
+                "createDate": date,
+                "email": email,
+                "emailVerifiedFlag": "string",
+                "name": "string",
+                "phone": {
+                  "areaCode": 0,
+                  "countryCode": 0,
+                  "createDate": date,
+                  "digits": 0,
+                  "phoneId": 0,
+                  "updateDate": date
+                },
+                "profilePicture": "string",
+                "pwHash": "string",
+                "updateDate": date,
+                "user": user_id,
+              },
             destination: {
-                createDate: "0",
-                driverVerifiedFlag: driver,
-                icon: "string",
-                location: des,
-                updateDate: "2019-06-09T14:54:24.991Z"
+                createDate: date,
+                driverVerifiedFlag: "Y",
+                icon: "",
+                location: 1,
+                updateDate: date
             },
             dow: dow,
-            endDate: "0",
+            endDate: new Date(end),
             origin: {
-                createDate: "0",
-                driverVerifiedFlag: "true",
-                icon: "string",
-                location: orig,
-                updateDate: "2019-06-09T14:54:24.991Z"
+                createDate: date,
+                driverVerifiedFlag: "Y",
+                icon: "",
+                location: 1,
+                updateDate: date
             },
             schedule: 0,
-            startDate: start,
-            timeOfDay: {
-                hour: 7,
-                minute: 30,
-                nano: 0,
-                second: 0
-            },
-            updateDate: "2019-06-09T14:54:24.991Z"
+            startDate: new Date(start),
+            timeOfDay: time += ":00",
+            updateDate: date
         };
+
+        console.log(JSON.stringify(body1))
+
         fetch(baseUrl+contextPath+scheduleApi,{
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(body1)
-        })
-            .then((res) => res.json())
+        }).then((res) => res.json())
             .then((resp)=> {
                 console.log( "shit happened", resp)
             }).then(resp=>{
