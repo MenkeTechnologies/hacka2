@@ -107,7 +107,7 @@ export const DashBoard = ({dashAction, state}) => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
+                    <Button onClick={(e) => dashAction(e, state.email)} size="small" color="primary">
                       View
                     </Button>
                     <FontAwesomeIcon size="1.5x" icon={faCheckCircle}/>
@@ -137,7 +137,7 @@ export const DashBoard = ({dashAction, state}) => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
+                    <Button onClick={(e) => dashAction(e, state.email)} size="small" color="primary">
                       View
                     </Button>
                   </CardActions>
