@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 import './App.css';
 import {SignUp} from './SignUp'
 import {Login} from './Login'
+import {Schedule} from './Schedule'
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -77,6 +78,13 @@ const SignUpWithState = connect(mapStateToProps, mapDispatchToProps)(({signUpDis
     console.log("sign up action invoked")
     return <SignUp signUpAction={signUpDispatch}/>
 })
+
+// Schedule wrapper
+const ScheduleWithState = connect(mapStateToProps, mapDispatchToProps)(({signUpDispatch}) => {
+    console.log("sign up action invoked")
+    return <Schedule ScheduleAction={ScheduleWithState}/>
+})
+
 
 const useStyles = makeStyles(theme => ({
     '@global': {
@@ -162,6 +170,7 @@ class App extends Component {
                 </AppBar>
                 <Route path="/SignUp" component={SignUpWithState}/>
                 <Route path="/Login" component={LoginWithState}/>
+                <Route path="/Schedule" component={ScheduleWithState}/>
                 <Route exact path="/" component={LoginWithState}/>
             </Router>
         </div>
