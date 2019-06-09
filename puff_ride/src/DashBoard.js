@@ -59,9 +59,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-export default function Album() {
+export const DashBoard = ({state}) => {
   const classes = useStyles();
 
   return (
@@ -88,7 +86,7 @@ export default function Album() {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map(card => (
+            {state.dash.map(card => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
@@ -98,10 +96,10 @@ export default function Album() {
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                        1127 Church Street
+                       {card}
                     </Typography>
                     <Typography gutterBottom variant="h5" component="h2">
-                        515 E Jefferson St
+                        {card}
                     </Typography>
                     <Typography>
                         8:00 AM / M,T,W,Th,Fr,Sa,Su
