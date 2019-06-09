@@ -15,14 +15,30 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {makeStyles} from '@material-ui/core/styles';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
+import {Ride} from './Ride'
 
+<<<<<<< HEAD
+=======
+
+let baseUrl = "http://10.248.35.68:8080";
+let contextPath = "/puffride/api/v1";
+
+>>>>>>> d238220f1925fd1ed7c49a4de302a4f47a65763b
 /* 
  * mapDispatchToProps
 */
 const mapDispatchToProps = (dispatch) => ({
     emailOnChange: (e) => (dispatch({type: "EMAIL_UPDATE", email: e.target.value})),
     passOnChange: (e) => (dispatch({type: "PASS_UPDATE", pass: e.target.value})),
-    loginDispatch: (e) => (dispatch({type: "LOGIN"})),
+    loginDispatch: (e) => {
+
+        fetch(baseUrl + contextPath + "/user/findByEmail?email=caden.bergnaum%40example.net")
+            .then((res)=>res.json()).then((res2)=>{
+               console.log('\n_____________=', res2, '_____________\n');
+            })
+
+        return dispatch({type: "LOGIN"})
+    },
     signUpDispatch: (e, name, email, password, biography) => (dispatch({
         type: "SIGNUP_ACTION", value: {
             name: name,
@@ -80,6 +96,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
+const RideWithState = connect(mapStateToProps, mapDispatchToProps)(({simpleReducer})=>{
+    return <Ride state = {simpleReducer}/>
+})
 /**
  * @class App
  * @extends {Component}
@@ -139,6 +158,7 @@ class App extends Component {
                 <Route path="/SignUp" component={SignUpWithState}/>
                 <Route path="/Login" component={LoginWithState}/>
                 <Route exact path="/" component={LoginWithState}/>
+                <Route path = "/Ride" component={RideWithState}/>
             </Router>
         </div>
     }
