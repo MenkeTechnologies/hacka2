@@ -30,21 +30,53 @@ export default (state = {}, action) => {
       console.log("Dash matched triggered")
       return {
         ...state,
-        unmatched: action.payload
+        matched: action.payload
       };
     case 'DASH_UNMATCHED':
       console.log("Dash unmatched triggered")
       console.log(action.payload)
       return {
         ...state,
-        matched: action.payload
+        unmatched: action.payload
       };
+    case 'SCHEDULE_ACTION':
+      console.log("Scheudle action issued")
+      console.log(action.value.time)
+      console.log(action.value.des)
+      console.log(action.value.dow)
+      return {
+        ...state,
+        dow : action.value.dow,
+        orig : action.value.orig,
+        des : action.value.des,
+        time : action.value.time,
+        start : action.value.start,
+        end : action.value.end,
+        driver : action.value.driver
+      }
     case 'LOGGED_IN':
       console.log("logging in")
       return{
         ...state,
         user_info: action.payload,
         status: "logged in"
+      }
+    case 'RIDE_ACTION':
+      console.log("ride action in reducer");
+      return{
+        ...state,
+        status: "ride",
+        ride: action.payload
+      }
+    case 'NEW_SCHEDULE':
+      return{
+        ...state,
+        status: "new_schedule"
+      }
+    case 'BACK_TO_DASHBOARD':
+      return{
+        ...state,
+        status: "dashboard"
       }
     default:
       if(state.status ==="logged in"){
@@ -54,8 +86,8 @@ export default (state = {}, action) => {
       }else{return {
         status: "not logged in",
         ride: ['usera', 'userb', 'userc'],
-        matched: ['schedule1', 'schedule2', 'schedule3'],
-        unmatched:['schedule4', 'schedule5', 'schedule6']
+        matched: [],
+        unmatched:[]
       };
     }
   }
