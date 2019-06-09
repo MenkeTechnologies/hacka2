@@ -91,7 +91,7 @@ export const Login = ({state, emailAction, passAction, loginAction}) => {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={loginAction}
+            onClick={(e)=>{loginAction(e, state.email, state.password)}}
           >
             Log In
           </Button>
