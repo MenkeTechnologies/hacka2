@@ -23,6 +23,5 @@ export function schedulerActionCreator(dow, orig, des, time, start, end, driver)
         payload: {
             dow, orig, des, time, start, end, driver
         }
-
     }
 }

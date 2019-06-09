@@ -59,8 +59,7 @@ const mapDispatchToProps = (dispatch) => ({
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(body)
-        })
-            .then((res) => res.json()).then((resp) => {
+        }).then((res) => res.json()).then((resp) => {
             // console.log('\n_____________=', resp, '_____________\n');
             console.log(resp)
 
