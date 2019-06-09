@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {BrowserRouter as Router, Route} from "react-router-dom";
 
 import logo from './logo.svg';
 import './App.css';
@@ -35,12 +36,16 @@ class App extends Component {
   }
 
   render() {
-    if(this.props.simpleReducer.status === "not logged in"){
-      return <SignUp/>
-    }
-    else{
-      return <div> HEllO WORLD! </div>
-    }
+      return<Router>
+          <Route path = "/login" component={SignUp}/>
+      </Router>
+
+    // if(this.props.simpleReducer.status === "not logged in"){
+    //   return <SignUp/>
+    // }
+    // else{
+    //   return <div> HEllO WORLD! </div>
+    // }
     // return (
     //   <div className="App">
     //     <header className="App-header">
