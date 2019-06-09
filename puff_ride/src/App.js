@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 import './App.css';
 import {SignUp} from './SignUp'
 import {Login} from './Login'
-import DashBoard from './DashBoard'
+import {DashBoard} from './DashBoard'
 import { simpleAction } from './actions/simpleAction'
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -17,13 +17,12 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 import {Ride} from './Ride'
 
-<<<<<<< HEAD
-=======
 
 let baseUrl = "http://10.248.35.68:8080";
 let contextPath = "/puffride/api/v1";
+let unmatchedSchedulesApi = "/schedule/findSchedulesWithNoRidesByEmail";
+let matchedSchedulesApi = "/schedule/findSchedulesWithRidesByEmail";
 
->>>>>>> d238220f1925fd1ed7c49a4de302a4f47a65763b
 /* 
  * mapDispatchToProps
 */
@@ -46,7 +45,11 @@ const mapDispatchToProps = (dispatch) => ({
             password: password,
             biography: biography
         }
-    }))
+    })),
+    // dashDispatch: (e) = {
+    //     fetch(baseUrl + contextPath + unmatchedSchedulesApi) //FIX ME: call api to query all matched rides and pending rides to dashboard)
+
+    // },
 });
 
 /* 
@@ -68,6 +71,11 @@ const LoginWithState = connect(mapStateToProps, mapDispatchToProps)(({emailOnCha
 const SignUpWithState = connect(mapStateToProps, mapDispatchToProps)(({signUpDispatch}) => {
     console.log("sign up action invoked")
     return <SignUp signUpAction={signUpDispatch}/>
+})
+
+const DashBoardWithState = connect(mapStateToProps, mapDispatchToProps)(({dashDispatch, simpleReducer}) => {
+    console.log("dash boarding hello")
+    return <DashBoard dashAction={dashDispatch} state = {simpleReducer}/>
 })
 
 const useStyles = makeStyles(theme => ({
@@ -154,7 +162,7 @@ class App extends Component {
                         </Link>
                     </Toolbar>
                 </AppBar>
-                <Route path = "/DashBoard" component={DashBoard}/>
+                <Route path = "/DashBoard" component={DashBoardWithState}/>
                 <Route path="/SignUp" component={SignUpWithState}/>
                 <Route path="/Login" component={LoginWithState}/>
                 <Route exact path="/" component={LoginWithState}/>
