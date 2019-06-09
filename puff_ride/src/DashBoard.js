@@ -61,7 +61,7 @@ const useStyles = makeStyles(theme => ({
 
 export const DashBoard = ({dashAction, state}) => {
   const classes = useStyles();
-  console.log(state)
+  console.log(state);
 
   return (
     <React.Fragment>
@@ -88,7 +88,7 @@ export const DashBoard = ({dashAction, state}) => {
           {/* End hero unit */}
           <Grid container spacing={4}>
             {state.matched.map(card => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+              <Grid item key={card.schedule} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
@@ -97,20 +97,20 @@ export const DashBoard = ({dashAction, state}) => {
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                       {card}
+                       {card.origin.location}
                     </Typography>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {card}
+                        {card.destination.location}
                     </Typography>
                     <Typography>
-                        8:00 AM / M,T,W,Th,Fr,Sa,Su
+                        {card.timeOfDay} / M,T,W,Th,Fr
                     </Typography>
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">
                       View
                     </Button>
-                    <FontAwesomeIcon icon={faCheckCircle}/>
+                    <FontAwesomeIcon size="1.5x" icon={faCheckCircle}/>
                   </CardActions>
                 </Card>
               </Grid>
@@ -118,7 +118,7 @@ export const DashBoard = ({dashAction, state}) => {
           </Grid>
           <Grid container spacing={4}>
             {state.unmatched.map(card => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+              <Grid item key={card.schedule} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
@@ -127,10 +127,10 @@ export const DashBoard = ({dashAction, state}) => {
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                       {card}
+                        {card.origin.location}
                     </Typography>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {card}
+                        {card.destination.location}
                     </Typography>
                     <Typography>
                         8:00 AM / M,T,W,Th,Fr,Sa,Su
@@ -140,7 +140,6 @@ export const DashBoard = ({dashAction, state}) => {
                     <Button size="small" color="primary">
                       View
                     </Button>
-                    <FontAwesomeIcon icon={faCheckCircle}/>
                   </CardActions>
                 </Card>
               </Grid>
