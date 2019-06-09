@@ -17,14 +17,10 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 import {Ride} from './Ride'
 
-<<<<<<< HEAD
-=======
-
 let baseUrl = "http://10.248.35.68:8080";
 let contextPath = "/puffride/api/v1";
 
->>>>>>> d238220f1925fd1ed7c49a4de302a4f47a65763b
-/* 
+/*
  * mapDispatchToProps
 */
 const mapDispatchToProps = (dispatch) => ({
@@ -93,6 +89,7 @@ const useStyles = makeStyles(theme => ({
     submit: {
         margin: theme.spacing(3, 0, 2),
     },
+
 }));
 
 
