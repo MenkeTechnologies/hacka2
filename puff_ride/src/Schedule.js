@@ -13,6 +13,8 @@ import puff from './img/puff.png';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import { Redirect } from "react-router-dom";
+
 
 function MadeWithLove() {
   return (
@@ -63,7 +65,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export const Schedule = ({scheduleAction}) => {
+export const Schedule = ({scheduleAction, backToDashboard, state}) => {
   const classes = useStyles();
 
   const [driver_state, setDriver ] = useState({checked: false});
@@ -110,7 +112,7 @@ export const Schedule = ({scheduleAction}) => {
       return val;
   }
 
-  return (
+  return state.status === 'dashboard' ? (<Redirect to='/DashBoard'/>): (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -297,7 +299,7 @@ export const Schedule = ({scheduleAction}) => {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={()=> scheduleAction(computeDow(), selectedOrigin_State, selectedDest_State, selectedTime, selectedStartDate, selectedEndDate, driver_state)}
+            onClick={(e)=>{ backToDashboard(e, state.user_info[0].email, computeDow(), selectedOrigin_State, selectedDest_State, selectedTime, selectedStartDate, selectedEndDate, driver_state)}}
           >
             Submit
           </Button>
