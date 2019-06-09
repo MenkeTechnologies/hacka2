@@ -13,3 +13,7 @@
 - Subscription
 - Service Fee
 
+
+## Database Diagram
+
+![physical diagrarm](puffride.png)
