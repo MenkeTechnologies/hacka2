@@ -48,9 +48,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SignUp() {
+export const Login = ({state, emailAction, passAction, loginAction}) => {
   const classes = useStyles();
-
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -61,7 +60,7 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Log In
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate >
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
@@ -71,6 +70,7 @@ export default function SignUp() {
                 id="email"
                 label="Email Address"
                 name="email"
+                onChange={emailAction}
               />
             </Grid>
             <Grid item xs={12}>
@@ -82,14 +82,16 @@ export default function SignUp() {
                 label="Password"
                 type="password"
                 id="password"
+                onChange={passAction}
               />
             </Grid>
           <Button
-            type="submit"
+            type="button"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={loginAction}
           >
             Log In
           </Button>

@@ -5,24 +5,33 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import SignUp from './SignUp'
-import Login from './Login'
+import {Login} from './Login'
 
 import { simpleAction } from './actions/simpleAction'
 
 /* 
  * mapDispatchToProps
 */
-const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
+const mapDispatchToProps = (dispatch) => ({
+    emailOnChange: (e) =>(dispatch({ type: "EMAIL_UPDATE", email: e.target.value })),
+    passOnChange: (e) =>(dispatch({ type: "PASS_UPDATE", pass: e.target.value })),
+    loginDispatch: (e) =>(dispatch({ type: "LOGIN"}))
 })
 
 /* 
  * mapStateToProps
 */
-const mapStateToProps = state => ({
-  ...state
-})
+const mapStateToProps = (state) => {
+  return{
+      simpleReducer: state.simpleReducer
+  }
+};
 
+const LoginWithState = connect(mapStateToProps, mapDispatchToProps)(({emailOnChange, passOnChange, loginDispatch, simpleReducer})=>{
+    console.log(simpleReducer)
+    console.log(passOnChange)
+    return <Login state={simpleReducer} emailAction={emailOnChange} passAction={passOnChange} loginAction={loginDispatch}/>
+})
 /**
  * @class App
  * @extends {Component}
@@ -39,42 +48,8 @@ class App extends Component {
   render() {
       return<Router>
           <Route path = "/SignUp" component={SignUp}/>
-          <Route path = "/" component={Login}/>
+          <Route path = "/" component={LoginWithState}/>
       </Router>
-
-    // if(this.props.simpleReducer.status === "not logged in"){
-    //   return <SignUp/>
-    // }
-    // else{
-    //   return <div> HEllO WORLD! </div>
-    // }
-    //   return <SignUp/>
-    // }
-    // else{
-    //   return <div> HEllO WORLD! </div>
-    // }
-    //   return <SignUp/>
-    // }
-    // else{
-    //   return <div> HEllO WORLD! </div>
-    // }
-    // return (
-    //   <div className="App">
-    //     <header className="App-header">
-    //       <img src={logo} className="App-logo" alt="logo" />
-    //       <h1 className="App-title">Welcome to React</h1>
-    //     </header>
-    //     <pre>
-    //       {
-    //         JSON.stringify(this.props)
-    //       }
-    //     </pre>
-    //     <button onClick={this.simpleAction}>Test redux action</button>
-    //     <p className="App-intro">
-    //       To get started, edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //   </div>
-    // );
   }
 }
 
