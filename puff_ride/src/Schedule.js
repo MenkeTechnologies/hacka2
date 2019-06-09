@@ -8,16 +8,11 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import ImageUploader from 'react-images-upload';
 import Avatar from "@material-ui/core/Avatar";
 import puff from './img/puff.png';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
-import Favorite from '@material-ui/icons/Favorite';
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 
 function MadeWithLove() {
   return (
@@ -68,15 +63,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export const Schedule = ({ScheduleAction}) => {
+export const Schedule = ({scheduleAction}) => {
   const classes = useStyles();
 
-  const [ email_state, setEmail ] = useState('');
-  const [ name_state, setName ] = useState('');
-  const [ driver_state, setDriver ] = useState({checked: false});
+  const [driver_state, setDriver ] = useState({checked: false});
   const [selectedTime, setSelectedTime] = React.useState('07:30');
   const [selectedStartDate, setSelectedStartDate] = React.useState("2017-05-23");
   const [selectedEndDate, setSelectedEndDate] = React.useState("2017-05-23");
+  const [selectedOrigin_State, setSelectedOrig] = React.useState("");
+  const [selectedDest_State, setSelectedDest] = React.useState("");
 
   const [dow, setDow] = React.useState({
     mon: false,
@@ -110,7 +105,7 @@ export const Schedule = ({ScheduleAction}) => {
 
   function computeDow() {
       var val = 0;
-      val = dow.mon * 1 + dow.tue * 2 + dow.wed * 4 + dow.thu * 8 + dow.fri * 16 + dow.sat * 32 + dow.fri * 64;
+      val = dow.mon * 1 + dow.tue * 2 + dow.wed * 4 + dow.thu * 8 + dow.fri * 16 + dow.sat * 32 + dow.sun * 64;
 
       return val;
   }
@@ -226,8 +221,9 @@ export const Schedule = ({ScheduleAction}) => {
                 id="Origin"
                 label="Origin"
                 name="Origin"
-                value={name_state}
-                onChange={(event) => setName(event.target.value)}
+                value={selectedOrigin_State}
+                onChange={(event) => setSelectedOrig(event.target.value)}
+                autoComplete="billing address-line1"
               />
             </Grid>
             <Grid item xs={12} sm = {6}>
@@ -238,8 +234,9 @@ export const Schedule = ({ScheduleAction}) => {
                 id="Destination"
                 label="Destination"
                 name="Destination"
-                value={email_state}
-                onChange={(event) => setEmail(event.target.value)}
+                value={selectedDest_State}
+                onChange={(event) => setSelectedDest(event.target.value)}
+                autoComplete="billing address-line1"
               />
             </Grid>
             <Grid item xs={12}>
@@ -300,7 +297,7 @@ export const Schedule = ({ScheduleAction}) => {
             variant="contained"
             color="primary"
             className={classes.submit}
-            // onClick={(e) => ScheduleAction(e, name_state, email_state, password_state, biography_state)}
+            onClick={()=> scheduleAction(computeDow(), selectedOrigin_State, selectedDest_State, selectedTime, selectedStartDate, selectedEndDate, driver_state)}
           >
             Submit
           </Button>

@@ -112,6 +112,11 @@ const mapDispatchToProps = (dispatch) => ({
             biography: biography
         }
     })),
+    scheduleDispatch: (dow, orig, des, time, start, end, driver) => (dispatch({
+        type: "SCHEDULE_ACTION", value : {
+            dow, orig, des, time, start, end, driver
+        }
+    })),
 });
 
 /* 
@@ -136,9 +141,9 @@ const SignUpWithState = connect(mapStateToProps, mapDispatchToProps)(({signUpDis
 })
 
 // Schedule wrapper
-const ScheduleWithState = connect(mapStateToProps, mapDispatchToProps)(({signUpDispatch}) => {
-    console.log("sign up action invoked")
-    return <Schedule ScheduleAction={ScheduleWithState}/>
+const ScheduleWithState = connect(mapStateToProps, mapDispatchToProps)(({scheduleDispatch}) => {
+    console.log("Schedule board hello")
+    return <Schedule scheduleAction={scheduleDispatch}/>
 })
 
 const DashBoardWithState = connect(mapStateToProps, mapDispatchToProps)(({dashDispatch, simpleReducer}) => {
