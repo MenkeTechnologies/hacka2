@@ -16,7 +16,7 @@ function MadeWithLove() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Built with love by the '}
       <Link color="inherit" href="https://material-ui.com/">
-        Material-UI
+        PuffRide
       </Link>
       {' team.'}
     </Typography>
