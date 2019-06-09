@@ -13,7 +13,6 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render(
   <Provider store={configureStore()}>
     <App />
-    {/* <SignUp /> */}
   </Provider>,
   document.getElementById('root')
 );
