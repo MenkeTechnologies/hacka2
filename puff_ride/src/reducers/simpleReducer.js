@@ -9,10 +9,9 @@ export default (state = {}, action) => {
       }
     default:
       return {
-        status: "not logged in"
-        email: ''
-        password: ''
+        status: "not logged in",
+        email: '',
+        password: '',
       }
-
   }
 }

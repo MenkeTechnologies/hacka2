@@ -40,6 +40,7 @@ class App extends Component {
       return<Router>
           <Route path = "/SignUp" component={SignUp}/>
           <Route path = "/" component={Login}/>
+          {/* <Route path = "/DashBoard" component={DashBoard}/> */}
       </Router>
 
     // if(this.props.simpleReducer.status === "not logged in"){
