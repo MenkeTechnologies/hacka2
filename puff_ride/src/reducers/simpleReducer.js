@@ -26,6 +26,11 @@ export default (state = {}, action) => {
         password: action.password,
         biography: action.biography,
       };
+    case 'DASH_ACTION':
+      return {
+        ...state,
+        dash: ['schedule1', 'schedule2', 'schedule3']
+      }
     default:
       return {
         status: "not logged in",
