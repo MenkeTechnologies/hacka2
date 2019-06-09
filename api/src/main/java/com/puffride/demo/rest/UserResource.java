@@ -18,9 +18,9 @@ public class UserResource {
     @Autowired
     UserDao dao;
 
-    @GetMapping("findByEmail")
-    public List<User> findByEmail(@RequestParam("email") String email){
-        List<User> users = dao.findAll().stream().filter(user -> user.getEmail().equalsIgnoreCase(email)).collect(Collectors.toList());
+    @PostMapping("findByEmail")
+    public List<User> findByEmail(@RequestBody AuthObj authObj){
+        List<User> users = dao.findAll().stream().filter(user -> user.getEmail().equalsIgnoreCase(authObj.getEmail())).collect(Collectors.toList());
         return users;
     }
     @GetMapping
