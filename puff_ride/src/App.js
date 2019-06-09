@@ -35,7 +35,12 @@ class App extends Component {
   }
 
   render() {
-    return <SignUp /> 
+    if(this.props.simpleReducer.status === "not logged in"){
+      return <SignUp/>
+    }
+    else{
+      return <div> HEllO WORLD! </div>
+    }
     // return (
     //   <div className="App">
     //     <header className="App-header">

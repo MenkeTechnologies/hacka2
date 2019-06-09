@@ -8,6 +8,9 @@ export default (state = {}, action) => {
         result: action.payload
       }
     default:
-      return state
+      return {
+        status: "not logged in"
+      }
+
   }
 }
