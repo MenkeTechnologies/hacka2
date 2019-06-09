@@ -23,6 +23,12 @@ public class Location implements Serializable {
     @Column(name = "ICON")
     private String icon;
 
+    @Column(name = "LATITUDE")
+    private double latitude;
+
+    @Column(name = "LONGITUDE")
+    private double longitude;
+
     @Column(name = "CREATE_DATE")
     private LocalDate createDate;
 
