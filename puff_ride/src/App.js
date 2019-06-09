@@ -19,6 +19,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 import {Ride} from './Ride'
 import history from './history'
+import Geocode from "react-geocode";
 
 
 let baseUrl = "http://10.248.35.68:8080";
@@ -26,6 +27,7 @@ let contextPath = "/puffride/api/v1";
 let unmatchedSchedulesApi = "/schedule/findSchedulesWithNoRidesByEmail";
 let matchedSchedulesApi = "/schedule/findSchedulesWithRidesByEmail";
 let scheduleApi = "/schedule"
+let matching = "/schedule/findMatchingSchedules"
 
 function fetchPostWrapper(body, endpoint) {
     fetch(baseUrl + contextPath + endpoint, {
@@ -41,6 +43,10 @@ function fetchPostWrapper(body, endpoint) {
         return (resp);
     });
 }
+
+Geocode.setApiKey("AIzaSyC86RGegtCwlFRA_eb4ul3pvEJG2VNBC0s");
+// Enable or disable logs. Its optional.
+Geocode.enableDebug();
 
 /*
  * mapDispatchToProps
@@ -137,7 +143,7 @@ const mapDispatchToProps = (dispatch) => ({
         }
     })),
     addScheduleDispatch: (e) => (dispatch({type:"NEW_SCHEDULE"})),
-    backToDashboard: (e, user_id, email, dow, orig, des, time, start, end, driver) => {
+    backToDashboard: (e, user_id, email, dow, orig_long, orig_lat, des_long, des_lat, time, start, end, driver) => {
 
         let body = {
             email: email,
@@ -190,6 +196,32 @@ const mapDispatchToProps = (dispatch) => ({
             timeOfDay: time += ":00",
             updateDate: date
         };
+
+        let body2 = {
+            "destination": {
+                "latitude": des_lat,
+                "longitude": des_long
+            },
+            "dow": 0,
+            "origin": {
+                "latitude": orig_lat,
+                "longitude": orig_long
+            },
+            "timeOfDay": "09:00:00"
+        }
+
+        console.log(baseUrl+contextPath+matching);
+        fetch(baseUrl+contextPath+matching, {
+            method:'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify(body2)
+        }).then((res) => console.log(res.json()))
+        .then((resp)=>{
+            console.log(resp)
+            dispatch({type:"FINDMATCHING", payload: resp})
+        });
 
         console.log(JSON.stringify(body1))
 

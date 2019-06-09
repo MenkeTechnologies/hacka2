@@ -150,6 +150,26 @@ export const Ride = ({state}) => {
                         }
                     </Grid>
                 </Grid>
+                <Grid item xs={12}>
+                    <Grid container spacing={2}>
+                        <Grid item xs={12}>
+                            <Container maxWidth ="sm">
+                                <Typography style={{"font-size": "2.5rem"}} component="h5" variant="h2" align="center" color="textPrimary" gutterBottom>
+                                    Matching Ride Schedules
+                                </Typography>
+                            </Container>
+                        </Grid>
+                        {
+                            state.ride.map((item,idx)=>
+                                <Grid item xs={12}>
+                                    <Paper className={classes.paper}>
+                                        <JSONTree data={item}/>
+                                    </Paper>
+                                </Grid>
+                            )
+                        }
+                    </Grid>
+                </Grid>
             </Grid>
         </div>
 

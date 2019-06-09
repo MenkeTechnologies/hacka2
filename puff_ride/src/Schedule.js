@@ -72,8 +72,13 @@ export const Schedule = ({scheduleAction, backToDashboard, state}) => {
   const [selectedTime, setSelectedTime] = React.useState('07:30');
   const [selectedStartDate, setSelectedStartDate] = React.useState("2017-05-23");
   const [selectedEndDate, setSelectedEndDate] = React.useState("2017-05-23");
-  const [selectedOrigin_State, setSelectedOrig] = React.useState("");
-  const [selectedDest_State, setSelectedDest] = React.useState("");
+  const [selectedOrigin_Lat, setSelectedOrig_Lat] = React.useState("");
+  const [selectedOrigin_Long, setSelectedOrig_Long] = React.useState("");
+  const [selectedDest_Lat, setSelectedDest_Lat] = React.useState("");
+  const [selectedDest_Long, setSelectedDest_Long] = React.useState("");
+
+  const [selectedDest_State, setSelectedDest] = React.useState({longitude:"",
+  latitude:"",});
 
   const [dow, setDow] = React.useState({
     mon: false,
@@ -221,11 +226,34 @@ export const Schedule = ({scheduleAction, backToDashboard, state}) => {
                 required
                 fullWidth
                 id="Origin"
-                label="Origin"
-                name="Origin"
-                value={selectedOrigin_State}
-                onChange={(event) => setSelectedOrig(event.target.value)}
-                autoComplete="billing address-line1"
+                label="Origin Latitude"
+                name="Origin Latitude"
+                value={selectedOrigin_Lat}
+                onChange={(event) => setSelectedOrig_Lat(event.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12} sm = {6}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="Origin"
+                label="Origin Longitude"
+                name="Origin Longitude"
+                value={selectedOrigin_Long}
+                onChange={(event) => setSelectedOrig_Long(event.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12} sm = {6}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="Origin"
+                label="Destination Latitude"
+                name="Destination Latitude"
+                value={selectedDest_Lat}
+                onChange={(event) => setSelectedDest_Lat(event.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm = {6}>
@@ -234,11 +262,10 @@ export const Schedule = ({scheduleAction, backToDashboard, state}) => {
                 required
                 fullWidth
                 id="Destination"
-                label="Destination"
-                name="Destination"
-                value={selectedDest_State}
-                onChange={(event) => setSelectedDest(event.target.value)}
-                autoComplete="billing address-line1"
+                label="Destination Longitude"
+                name="Destination Longitude"
+                value={selectedDest_Long}
+                onChange={(event) => setSelectedDest_Long(event.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -299,7 +326,7 @@ export const Schedule = ({scheduleAction, backToDashboard, state}) => {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={(e)=>{ backToDashboard(e, state.user_info[0].user, state.user_info[0].email, computeDow(), selectedOrigin_State, selectedDest_State, selectedTime, selectedStartDate, selectedEndDate, driver_state)}}
+            onClick={(e)=>{ backToDashboard(e, state.user_info[0].user, state.user_info[0].email, computeDow(), selectedOrigin_Lat, selectedOrigin_Long, selectedDest_Lat, selectedDest_Long, selectedTime, selectedStartDate, selectedEndDate, driver_state)}}
           >
             Submit
           </Button>
