@@ -72,6 +72,24 @@ public class ScheduleResource {
         return schedules;
     }
 
+    @PostMapping("findMatchingSchedules")
+    public List<Schedule> findMatchingSchedules(@RequestBody ScheduleFinderObj scheduleFinderObj){
+
+        List<Schedule> schedules = dao.findAll();
+
+        List<Schedule> mattched = schedules.stream().filter(fr -> {
+            return fr.getOrigin().getLatitude() == scheduleFinderObj.getOrigin().getLatitude() &&
+                    fr.getOrigin().getLongitude() == scheduleFinderObj.getOrigin().getLongitude() &&
+                    fr.getOrigin().getLongitude() == scheduleFinderObj.getOrigin().getLongitude() &&
+                    fr.getDestination().getLongitude() == scheduleFinderObj.getDestination().getLongitude() &&
+                    fr.getDestination().getLatitude() == scheduleFinderObj.getDestination().getLatitude()
+                    && fr.getDow() == scheduleFinderObj.getDow()
+                    && scheduleFinderObj.getTimeOfDay().equals(fr.getTimeOfDay());
+        }).collect(Collectors.toList());
+
+        return mattched;
+    }
+
     @GetMapping
     public List<Schedule> readAll(){
         return dao.findAll();
@@ -85,6 +103,7 @@ public class ScheduleResource {
     @PostMapping
     public Schedule create(@RequestBody Schedule entity){
         return dao.save(entity);
+
     }
 
     @PutMapping
