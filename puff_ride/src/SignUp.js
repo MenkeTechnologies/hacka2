@@ -8,7 +8,7 @@
   //   };
   // }
 
-  import React from 'react';
+  import React, { useState } from 'react';
   import Avatar from '@material-ui/core/Avatar';
   import Button from '@material-ui/core/Button';
   import CssBaseline from '@material-ui/core/CssBaseline';
@@ -31,6 +31,10 @@
         {' team.'}
       </Typography>
     );
+  }
+
+  function signUpAction() {
+
   }
 
   function onDrop(picture) {
@@ -64,7 +68,12 @@
   
   export default function SignUp() {
     const classes = useStyles();
-  
+
+    const [ email_state, setEmail ] = useState('');
+    const [ name_state, setName ] = useState('');
+    const [ password_state, setPassword ] = useState('');
+    const [ biography_state, setBiography ] = useState('');
+    
     return (
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -85,6 +94,8 @@
                   id="name"
                   label="Name"
                   name="name"
+                  value={name_state}
+                  onChange={(event) => setName(event.target.name_state)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -95,6 +106,8 @@
                   id="email"
                   label="Email Address"
                   name="email"
+                  value={email_state}
+                  onChange={(event) => setEmail(event.target.email_state)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -106,6 +119,8 @@
                   label="Password"
                   type="password"
                   id="password"
+                  value={password_state}
+                  onChange={(event) => setPassword(event.target.password_state)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -117,6 +132,8 @@
                   label="Biography"
                   type="Biography"
                   id="Biography"
+                  value={biography_state}
+                  onChange={(event) => setBiography(event.target.biography_state)}
                 />
               </Grid>
             </Grid>
