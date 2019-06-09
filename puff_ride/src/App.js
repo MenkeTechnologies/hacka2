@@ -5,12 +5,9 @@ import {Redirect} from "react-router-dom"
 import './App.css';
 import {SignUp} from './SignUp'
 import {Login} from './Login'
-<<<<<<< HEAD
 import {Schedule} from './Schedule'
-=======
 import {DashBoard} from './DashBoard'
 import { simpleAction } from './actions/simpleAction'
->>>>>>> 6824041d982ba8dbb81589b715e0d7b1c69fab14
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
