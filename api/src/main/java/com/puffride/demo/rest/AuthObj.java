@@ -26,8 +26,8 @@ class EmailObj {
 @AllArgsConstructor
 @NoArgsConstructor
 class LocationWrapper {
-    private float latitude;
-    private float longitude;
+    private double latitude;
+    private double longitude;
 }
 
 @Data

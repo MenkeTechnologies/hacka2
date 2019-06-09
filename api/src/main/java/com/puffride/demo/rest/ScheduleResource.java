@@ -77,17 +77,26 @@ public class ScheduleResource {
 
         List<Schedule> schedules = dao.findAll();
 
-        List<Schedule> mattched = schedules.stream().filter(fr -> {
-            return fr.getOrigin().getLatitude() == scheduleFinderObj.getOrigin().getLatitude() &&
-                    fr.getOrigin().getLongitude() == scheduleFinderObj.getOrigin().getLongitude() &&
-                    fr.getOrigin().getLongitude() == scheduleFinderObj.getOrigin().getLongitude() &&
-                    fr.getDestination().getLongitude() == scheduleFinderObj.getDestination().getLongitude() &&
-                    fr.getDestination().getLatitude() == scheduleFinderObj.getDestination().getLatitude()
-                    && fr.getDow() == scheduleFinderObj.getDow()
-                    && scheduleFinderObj.getTimeOfDay().equals(fr.getTimeOfDay());
-        }).collect(Collectors.toList());
+        List<Schedule> matched = new ArrayList<>();
 
-        return mattched;
+        for (Schedule fr : schedules) {
+
+            if (fr.getOrigin().getLatitude() == scheduleFinderObj.getOrigin().getLatitude() &&
+                    fr.getOrigin().getLongitude() == scheduleFinderObj.getOrigin().getLongitude()){
+                System.out.println("\n_____________\"origin\" = " + "origin" + "_____________\n");
+                if (fr.getDestination().getLongitude() == scheduleFinderObj.getDestination().getLongitude() &&
+                        fr.getDestination().getLatitude() == scheduleFinderObj.getDestination().getLatitude()){
+                    System.out.println("\n_____________\"desting\" = " + "desting" + "_____________\n");
+                    if (fr.getDow().equals(scheduleFinderObj.getDow())){
+                       if (scheduleFinderObj.getTimeOfDay().equals(fr.getTimeOfDay())) {
+                            matched.add(fr);
+                       }
+                    }
+                }
+            }
+        }
+
+        return matched;
     }
 
     @GetMapping
