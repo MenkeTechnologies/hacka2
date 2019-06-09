@@ -24,11 +24,12 @@ public class Schedule implements Serializable {
     private Location origin;
 
     @OneToOne
+    @JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID")
+    private User creator;
+
+    @OneToOne
     @JoinColumn(name = "DESTINATION_ID", referencedColumnName = "LOCATION_ID")
     private Location destination;
-
-    @Column(name = "AMOUNT")
-    private Integer amount;
 
     @Column(name = "TIME_OF_DAY")
     private LocalTime timeOfDay;
