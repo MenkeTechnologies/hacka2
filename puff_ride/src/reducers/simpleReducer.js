@@ -26,12 +26,18 @@ export default (state = {}, action) => {
         password: action.password,
         biography: action.biography,
       };
+    case 'DASH_MATCHED':
+      console.log("Dash matched triggered")
+      return {
+        ...state,
+        unmatched: action.payload
+      };
     case 'DASH_UNMATCHED':
-      console.log("Dash action triggered")
+      console.log("Dash unmatched triggered")
       console.log(action.payload)
       return {
         ...state,
-        dash: action.payload
+        matched: action.payload
       };
     case 'LOGGED_IN':
       console.log("logging in")
@@ -48,7 +54,8 @@ export default (state = {}, action) => {
       }else{return {
         status: "not logged in",
         ride: ['usera', 'userb', 'userc'],
-        dash: ['schedule1', 'schedule2', 'schedule3']
+        matched: ['schedule1', 'schedule2', 'schedule3'],
+        unmatched:['schedule4', 'schedule5', 'schedule6']
       };
     }
   }

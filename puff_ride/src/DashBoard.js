@@ -87,7 +87,37 @@ export const DashBoard = ({dashAction, state}) => {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {state.dash.map(card => (
+            {state.matched.map(card => (
+              <Grid item key={card} xs={12} sm={6} md={4}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image="https://source.unsplash.com/random"
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                       {card}
+                    </Typography>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        {card}
+                    </Typography>
+                    <Typography>
+                        8:00 AM / M,T,W,Th,Fr,Sa,Su
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      View
+                    </Button>
+                    <FontAwesomeIcon icon={faCheckCircle}/>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+          <Grid container spacing={4}>
+            {state.unmatched.map(card => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
