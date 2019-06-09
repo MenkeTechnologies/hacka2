@@ -27,8 +27,7 @@ export default (state = {}, action) => {
       };
     default:
       return {
-        status: "not logged in"
-
+        status: "not logged in",
       };
   }
 };
