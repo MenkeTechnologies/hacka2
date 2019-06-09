@@ -14,6 +14,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 
+
 let baseUrl = "http://10.248.35.68:8080";
 let contextPath = "/puffride/api/v1";
 
@@ -130,6 +131,7 @@ class App extends Component {
                         <IconButton edge="start" color="inherit" aria-label="Menu">
                             <MenuIcon/>
                         </IconButton>
+
                         <Typography variant="h6">
                             PuffRide
                         </Typography>
