@@ -17,12 +17,17 @@ export default (state = {}, action) => {
       return {
         result: action.payload
       };
+    case 'SIGNUP_ACTION':
+      console.log("MEOW");
+      return {
+        email: action.payload.email,
+        name: action.payload.name,
+        biography: action.payload.biography,
+        password: action.payload.password,
+      };
     default:
       return {
-        status: "not logged in",
-        email: '',
-        password: ''
-      }
-
+        status: "not logged in"
+      };
   }
-}
+};
