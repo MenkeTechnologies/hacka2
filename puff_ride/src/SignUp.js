@@ -1,5 +1,4 @@
   import React, { useState } from 'react';
-  import Avatar from '@material-ui/core/Avatar';
   import Button from '@material-ui/core/Button';
   import CssBaseline from '@material-ui/core/CssBaseline';
   import TextField from '@material-ui/core/TextField';
@@ -10,6 +9,8 @@
   import { makeStyles } from '@material-ui/core/styles';
   import Container from '@material-ui/core/Container';
   import ImageUploader from 'react-images-upload';
+  import Avatar from "@material-ui/core/Avatar";
+  import puff from './img/puff.png';
   
   function MadeWithLove() {
     return (
@@ -64,9 +65,7 @@
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            {/* <LockOutlinedIcon /> */}
-          </Avatar>
+          <Avatar alt="puff" src={puff}/>
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
