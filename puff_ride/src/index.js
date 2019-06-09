@@ -7,11 +7,13 @@ import configureStore from './store';
 
 import './index.css';
 import App from './App';
+import SignUp from './SignUp'
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <Provider store={configureStore()}>
     <App />
+    {/* <SignUp /> */}
   </Provider>,
   document.getElementById('root')
 );
