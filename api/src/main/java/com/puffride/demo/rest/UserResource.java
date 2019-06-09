@@ -19,7 +19,8 @@ public class UserResource {
 
     @GetMapping
     public List<User> readAll(){
-        return dao.findAll();
+        List<User> users = dao.findAll();
+        return users;
     }
 
     @GetMapping("/{id}")
