@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
+import {Redirect} from "react-router-dom"
 import './App.css';
 import {SignUp} from './SignUp'
 import {Login} from './Login'
+import {DashBoard} from './DashBoard'
+import { simpleAction } from './actions/simpleAction'
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -13,10 +16,13 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {makeStyles} from '@material-ui/core/styles';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
+import {Ride} from './Ride'
 
 
 let baseUrl = "http://10.248.35.68:8080";
 let contextPath = "/puffride/api/v1";
+let unmatchedSchedulesApi = "/schedule/findSchedulesWithNoRidesByEmail";
+let matchedSchedulesApi = "/schedule/findSchedulesWithRidesByEmail";
 
 function fetchPostWrapper(body, endpoint) {
     fetch(baseUrl + contextPath + endpoint, {
@@ -27,7 +33,9 @@ function fetchPostWrapper(body, endpoint) {
         body: JSON.stringify(body)
     })
         .then((res) => res.json()).then((resp) => {
-        console.log('\n_____________=', resp, '_____________\n');
+        // console.log('\n_____________=', resp, '_____________\n');
+        console.log(resp)
+        return (resp);
     });
 }
 
@@ -43,7 +51,28 @@ const mapDispatchToProps = (dispatch) => ({
             email: email,
             password: password
         };
-        fetchPostWrapper(body, "/user/findByEmail");
+        fetch(baseUrl + contextPath + "/user/findByEmail", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        })
+            .then((res) => res.json()).then((resp) => {
+            // console.log('\n_____________=', resp, '_____________\n');
+            console.log(resp)
+
+            // this.props.history.push('/DashBoard')
+            if(resp.length > 0){
+                console.log("user found")
+                // this.props.history.push('/DashBoard')
+                return dispatch({type:"LOGGED_IN", payload: resp});
+            }
+        });
+
+        // if(response.length > 0){
+        //     this.props.history.push('/foo')
+        // }
 
         return dispatch({type: "LOGIN"})
     },
@@ -54,7 +83,11 @@ const mapDispatchToProps = (dispatch) => ({
             password: password,
             biography: biography
         }
-    }))
+    })),
+    // dashDispatch: (e) = {
+    //     fetch(baseUrl + contextPath + unmatchedSchedulesApi) //FIX ME: call api to query all matched rides and pending rides to dashboard)
+
+    // },
 });
 
 /* 
@@ -76,6 +109,11 @@ const LoginWithState = connect(mapStateToProps, mapDispatchToProps)(({emailOnCha
 const SignUpWithState = connect(mapStateToProps, mapDispatchToProps)(({signUpDispatch}) => {
     console.log("sign up action invoked")
     return <SignUp signUpAction={signUpDispatch}/>
+})
+
+const DashBoardWithState = connect(mapStateToProps, mapDispatchToProps)(({dashDispatch, simpleReducer}) => {
+    console.log("dash boarding hello")
+    return <DashBoard dashAction={dashDispatch} state = {simpleReducer}/>
 })
 
 const useStyles = makeStyles(theme => ({
@@ -101,9 +139,13 @@ const useStyles = makeStyles(theme => ({
     submit: {
         margin: theme.spacing(3, 0, 2),
     },
+
 }));
 
 
+const RideWithState = connect(mapStateToProps, mapDispatchToProps)(({simpleReducer})=>{
+    return <Ride state = {simpleReducer}/>
+})
 /**
  * @class App
  * @extends {Component}
@@ -160,9 +202,11 @@ class App extends Component {
                         </Link>
                     </Toolbar>
                 </AppBar>
+                <Route path = "/DashBoard" component={DashBoardWithState}/>
                 <Route path="/SignUp" component={SignUpWithState}/>
                 <Route path="/Login" component={LoginWithState}/>
                 <Route exact path="/" component={LoginWithState}/>
+                <Route path = "/Ride" component={RideWithState}/>
             </Router>
         </div>
     }
