@@ -299,7 +299,7 @@ export const Schedule = ({scheduleAction, backToDashboard, state}) => {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={(e)=>{ backToDashboard(e, state.user_info[0].email, computeDow(), selectedOrigin_State, selectedDest_State, selectedTime, selectedStartDate, selectedEndDate, driver_state)}}
+            onClick={(e)=>{ backToDashboard(e, state.user_info[0].user, state.user_info[0].email, computeDow(), selectedOrigin_State, selectedDest_State, selectedTime, selectedStartDate, selectedEndDate, driver_state)}}
           >
             Submit
           </Button>
