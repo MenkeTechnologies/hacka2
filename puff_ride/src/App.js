@@ -17,7 +17,20 @@ import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 let baseUrl = "http://10.248.35.68:8080";
 let contextPath = "/puffride/api/v1";
 
-/* 
+function fetchPostWrapper(body, endpoint) {
+    fetch(baseUrl + contextPath + endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    })
+        .then((res) => res.json()).then((resp) => {
+        console.log('\n_____________=', resp, '_____________\n');
+    });
+}
+
+/*
  * mapDispatchToProps
 */
 const mapDispatchToProps = (dispatch) => ({
@@ -29,16 +42,7 @@ const mapDispatchToProps = (dispatch) => ({
             email: email,
             password: password
         };
-        fetch(baseUrl + contextPath + "/user/findByEmail", {
-            method: 'POST',
-            headers:{
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(body)
-        })
-            .then((res) => res.json()).then((res2) => {
-            console.log('\n_____________=', res2, '_____________\n');
-        });
+        fetchPostWrapper(body, "/user/findByEmail");
 
         return dispatch({type: "LOGIN"})
     },
