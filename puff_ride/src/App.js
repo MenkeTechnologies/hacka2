@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-import logo from './logo.svg';
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import './App.css';
 import SignUp from './SignUp'
+import Login from './Login'
 
 import { simpleAction } from './actions/simpleAction'
 
@@ -35,12 +35,28 @@ class App extends Component {
   }
 
   render() {
-    if(this.props.simpleReducer.status === "not logged in"){
-      return <SignUp/>
-    }
-    else{
-      return <div> HEllO WORLD! </div>
-    }
+      return<Router>
+          <Route path = "/SignUp" component={SignUp}/>
+          <Route path = "/" component={Login}/>
+          {/* <Route path = "/DashBoard" component={DashBoard}/> */}
+      </Router>
+
+    // if(this.props.simpleReducer.status === "not logged in"){
+    //   return <SignUp/>
+    // }
+    // else{
+    //   return <div> HEllO WORLD! </div>
+    // }
+    //   return <SignUp/>
+    // }
+    // else{
+    //   return <div> HEllO WORLD! </div>
+    // }
+    //   return <SignUp/>
+    // }
+    // else{
+    //   return <div> HEllO WORLD! </div>
+    // }
     // return (
     //   <div className="App">
     //     <header className="App-header">
