@@ -33,10 +33,6 @@
     );
   }
 
-  function signUpAction() {
-
-  }
-
   function onDrop(picture) {
 
   }
@@ -66,7 +62,7 @@
     },
   }));
   
-  export default function SignUp() {
+  export const SignUp = ({signUpAction}) => {
     const classes = useStyles();
 
     const [ email_state, setEmail ] = useState('');
@@ -95,7 +91,7 @@
                   label="Name"
                   name="name"
                   value={name_state}
-                  onChange={(event) => setName(event.target.name_state)}
+                  onChange={(event) => setName(event.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -107,7 +103,7 @@
                   label="Email Address"
                   name="email"
                   value={email_state}
-                  onChange={(event) => setEmail(event.target.email_state)}
+                  onChange={(event) => setEmail(event.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -120,7 +116,7 @@
                   type="password"
                   id="password"
                   value={password_state}
-                  onChange={(event) => setPassword(event.target.password_state)}
+                  onChange={(event) => setPassword(event.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -133,7 +129,7 @@
                   type="Biography"
                   id="Biography"
                   value={biography_state}
-                  onChange={(event) => setBiography(event.target.biography_state)}
+                  onChange={(event) => setBiography(event.target.value)}
                 />
               </Grid>
             </Grid>
@@ -145,17 +141,18 @@
                 maxFileSize={5242880}
             />
             <Button
-              type="submit"
+              type="button"
               fullWidth
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={(e) => signUpAction(e, name_state, email_state, password_state, biography_state)}
             >
               Sign Up
             </Button>
             <Grid container justify="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>

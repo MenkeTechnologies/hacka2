@@ -20,10 +20,11 @@ export default (state = {}, action) => {
     case 'SIGNUP_ACTION':
       console.log("MEOW");
       return {
-        email: action.payload.email,
-        name: action.payload.name,
-        biography: action.payload.biography,
-        password: action.payload.password,
+        ...state,
+        name: action.name,
+        email: action.email,
+        password: action.password,
+        biography: action.biography,
       };
     default:
       return {
