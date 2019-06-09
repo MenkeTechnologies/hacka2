@@ -10,14 +10,18 @@ import { simpleAction } from './actions/simpleAction'
  * mapDispatchToProps
 */
 const mapDispatchToProps = (dispatch) => ({
-    emailOnChange: (e) =>(dispatch({ type: "EMAIL_UPDATE", email: e.target.value })),
-    passOnChange: (e) =>(dispatch({ type: "PASS_UPDATE", pass: e.target.value })),
-    loginDispatch: (e) =>(dispatch({ type: "LOGIN"})),
-    signUpDispatch: (e, name, email, password, biography) =>(dispatch({ type: "SIGNUP_ACTION", value: {name: name,
-                                                                                                       email: email,
-                                                                                                       password: password,
-                                                                                                       biography: biography }}))
-})
+    emailOnChange: (e) => (dispatch({type: "EMAIL_UPDATE", email: e.target.value})),
+    passOnChange: (e) => (dispatch({type: "PASS_UPDATE", pass: e.target.value})),
+    loginDispatch: (e) => (dispatch({type: "LOGIN"})),
+    signUpDispatch: (e, name, email, password, biography) => (dispatch({
+        type: "SIGNUP_ACTION", value: {
+            name: name,
+            email: email,
+            password: password,
+            biography: biography
+        }
+    }))
+});
 
 /* 
  * mapStateToProps
@@ -29,8 +33,8 @@ const mapStateToProps = (state) => {
 };
 
 const LoginWithState = connect(mapStateToProps, mapDispatchToProps)(({emailOnChange, passOnChange, loginDispatch, simpleReducer})=>{
-    console.log(simpleReducer)
-    console.log(passOnChange)
+    console.log(simpleReducer);
+    console.log(passOnChange);
     return <Login state={simpleReducer} emailAction={emailOnChange} passAction={passOnChange} loginAction={loginDispatch}/>
 })
 
@@ -55,6 +59,7 @@ class App extends Component {
       return<Router>
           <Route path = "/SignUp" component={SignUpWithState}/>
           <Route path = "/Login" component={LoginWithState}/>
+          <Route exact path = "/" component={LoginWithState}/>
       </Router>
   }
 }
