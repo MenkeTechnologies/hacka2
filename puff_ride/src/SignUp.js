@@ -1,8 +1,18 @@
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //   	email:' ',
+  //   	password:' ',
+  //   	proPicLink:' ',
+  //   	biography:' ',
+  //   };
+  // }
+
   import React, { useState } from 'react';
   import Button from '@material-ui/core/Button';
   import CssBaseline from '@material-ui/core/CssBaseline';
   import TextField from '@material-ui/core/TextField';
-  import {Link} from 'react-router-dom';
+  import Link from '@material-ui/core/Link';
   import Grid from '@material-ui/core/Grid';
   import Box from '@material-ui/core/Box';
   import Typography from '@material-ui/core/Typography';
@@ -17,7 +27,7 @@
       <Typography variant="body2" color="textSecondary" align="center">
         {'Built with love by the '}
         <Link color="inherit" href="https://material-ui.com/">
-          PuffRide
+          Material-UI
         </Link>
         {' team.'}
       </Typography>
@@ -141,7 +151,7 @@
             </Button>
             <Grid container justify="flex-end">
               <Grid item>
-                <Link to="/Login" variant="body2">
+                <Link href="/" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>
