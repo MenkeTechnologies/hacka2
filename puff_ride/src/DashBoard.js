@@ -13,7 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
 
 function MadeWithLove() {
   return (
@@ -80,11 +81,6 @@ export default function Album() {
                     Request Ride
                   </Button>
                 </Grid>
-                {/* <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Secondary action
-                  </Button>
-                </Grid> */}
               </Grid>
             </div>
           </Container>
@@ -115,7 +111,7 @@ export default function Album() {
                     <Button size="small" color="primary">
                       View
                     </Button>
-                    <i class="fas fa-check-circle"></i>
+                    <FontAwesomeIcon icon={faCheckCircle}/>
                   </CardActions>
                 </Card>
               </Grid>
