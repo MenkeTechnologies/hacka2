@@ -18,7 +18,7 @@ export default (state = {}, action) => {
         result: action.payload
       };
     case 'SIGNUP_ACTION':
-      console.log("MEOW");
+      console.log("Signed up");
       return {
         ...state,
         name: action.name,
@@ -26,10 +26,12 @@ export default (state = {}, action) => {
         password: action.password,
         biography: action.biography,
       };
-    case 'DASH_ACTION':
+    case 'DASH_UNMATCHED':
+      console.log("Dash action triggered")
+      console.log(action.payload)
       return {
         ...state,
-        dash: ['schedule1', 'schedule2', 'schedule3']
+        dash: action.payload
       };
     case 'LOGGED_IN':
       console.log("logging in")
@@ -39,9 +41,15 @@ export default (state = {}, action) => {
         status: "logged in"
       }
     default:
-      return {
+      if(state.status ==="logged in"){
+        return{
+          ...state
+        }
+      }else{return {
         status: "not logged in",
-        ride: ['usera', 'userb', 'userc']
+        ride: ['usera', 'userb', 'userc'],
+        dash: ['schedule1', 'schedule2', 'schedule3']
       };
+    }
   }
 };
