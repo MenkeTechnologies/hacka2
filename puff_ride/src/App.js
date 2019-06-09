@@ -23,12 +23,22 @@ let contextPath = "/puffride/api/v1";
 const mapDispatchToProps = (dispatch) => ({
     emailOnChange: (e) => (dispatch({type: "EMAIL_UPDATE", email: e.target.value})),
     passOnChange: (e) => (dispatch({type: "PASS_UPDATE", pass: e.target.value})),
-    loginDispatch: (e) => {
+    loginDispatch: (e, email, password) => {
 
-        fetch(baseUrl + contextPath + "/user/findByEmail?email=caden.bergnaum%40example.net")
-            .then((res)=>res.json()).then((res2)=>{
-               console.log('\n_____________=', res2, '_____________\n');
-            })
+        let body = {
+            email: email,
+            password: password
+        };
+        fetch(baseUrl + contextPath + "/user/findByEmail", {
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        })
+            .then((res) => res.json()).then((res2) => {
+            console.log('\n_____________=', res2, '_____________\n');
+        });
 
         return dispatch({type: "LOGIN"})
     },
