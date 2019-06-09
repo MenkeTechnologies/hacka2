@@ -29,6 +29,7 @@ export default (state = {}, action) => {
     default:
       return {
         status: "not logged in",
+        ride: ['usera', 'userb', 'userc']
       };
   }
 };
