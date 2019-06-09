@@ -6,6 +6,9 @@
 - Too many cars
 - Uber/lyft aer expensive and not oriented for scheduled carpool riders (long-term)
 - Busses don't go everywhere
+- Create a platform for people to look "long-term" carpool partners
+- Closely collaborate with companies/ city governement that are having a traffic issues
+
 
 ## Enhancement
 
