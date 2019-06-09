@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.puffride.demo.entity.User;
 import com.puffride.demo.dao.UserDao;
@@ -17,6 +18,11 @@ public class UserResource {
     @Autowired
     UserDao dao;
 
+    @GetMapping("findByEmail")
+    public List<User> findByEmail(@RequestParam("email") String email){
+        List<User> users = dao.findAll().stream().filter(user -> user.getEmail().equalsIgnoreCase(email)).collect(Collectors.toList());
+        return users;
+    }
     @GetMapping
     public List<User> readAll(){
         List<User> users = dao.findAll();
