@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import './App.css';
-import SignUp from './SignUp'
+import {SignUp} from './SignUp'
 import {Login} from './Login'
-
 import { simpleAction } from './actions/simpleAction'
 
 /* 
@@ -13,7 +12,11 @@ import { simpleAction } from './actions/simpleAction'
 const mapDispatchToProps = (dispatch) => ({
     emailOnChange: (e) =>(dispatch({ type: "EMAIL_UPDATE", email: e.target.value })),
     passOnChange: (e) =>(dispatch({ type: "PASS_UPDATE", pass: e.target.value })),
-    loginDispatch: (e) =>(dispatch({ type: "LOGIN"}))
+    loginDispatch: (e) =>(dispatch({ type: "LOGIN"})),
+    signUpDispatch: (e, name, email, password, biography) =>(dispatch({ type: "SIGNUP_ACTION", value: {name: name,
+                                                                                                       email: email,
+                                                                                                       password: password,
+                                                                                                       biography: biography }}))
 })
 
 /* 
@@ -30,6 +33,11 @@ const LoginWithState = connect(mapStateToProps, mapDispatchToProps)(({emailOnCha
     console.log(passOnChange)
     return <Login state={simpleReducer} emailAction={emailOnChange} passAction={passOnChange} loginAction={loginDispatch}/>
 })
+
+const SignUpWithState = connect(mapStateToProps, mapDispatchToProps)(({signUpDispatch})=>{
+  console.log("sign up action invoked")
+  return <SignUp signUpAction={signUpDispatch}/>
+})
 /**
  * @class App
  * @extends {Component}
@@ -45,7 +53,7 @@ class App extends Component {
 
   render() {
       return<Router>
-          <Route path = "/SignUp" component={SignUp}/>
+          <Route path = "/SignUp" component={SignUpWithState}/>
           <Route path = "/" component={LoginWithState}/>
       </Router>
   }
