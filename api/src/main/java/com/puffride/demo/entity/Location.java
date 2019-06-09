@@ -20,11 +20,8 @@ public class Location implements Serializable {
     @Column(name = "DRIVER_VERIFIED_FLAG")
     private String driverVerifiedFlag;
 
-    @Column(name = "USER_ID")
-    private Integer userId;
-
-    @Column(name = "ICON_TYPE")
-    private String iconType;
+    @Column(name = "ICON")
+    private String icon;
 
     @Column(name = "CREATE_DATE")
     private LocalDate createDate;
