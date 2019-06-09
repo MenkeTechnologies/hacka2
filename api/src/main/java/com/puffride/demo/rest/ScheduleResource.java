@@ -7,6 +7,7 @@ import com.puffride.demo.entity.User;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,6 +29,38 @@ public class ScheduleResource {
     public List<Ride> findRidesByEmail(@RequestBody EmailObj emailObj) {
         List<Ride> rides = riderDao.findAll().stream().filter(r -> r.getRider().getUser().getEmail().equalsIgnoreCase(emailObj.getEmail())).collect(Collectors.toList());
         return rides;
+    }
+
+    @PostMapping("findSchedulesWithNoRidesByEmail")
+    public List<Schedule> findSchedulesWithNoRidesByEmail(@RequestBody EmailObj emailObj){
+        List<Schedule> schedules = dao.findAll().stream().filter(sched -> sched.getCreator().getEmail().equalsIgnoreCase(emailObj.getEmail())).collect(Collectors.toList());
+
+        List<Schedule> unmatchedSchedules = new ArrayList<>();
+
+        for (Schedule schedule : schedules) {
+            List<Ride> rides = riderDao.findAll().stream().filter(r -> r.getSchedule().equals(schedule)).collect(Collectors.toList());
+           if (rides.isEmpty()){
+               unmatchedSchedules.add(schedule);
+           }
+        }
+
+        return unmatchedSchedules;
+    }
+
+    @PostMapping("findSchedulesWithRidesByEmail")
+    public List<Schedule> findSchedulesWithRidesByEmail(@RequestBody EmailObj emailObj){
+        List<Schedule> schedules = dao.findAll().stream().filter(sched -> sched.getCreator().getEmail().equalsIgnoreCase(emailObj.getEmail())).collect(Collectors.toList());
+
+        List<Schedule> matchedSchedules = new ArrayList<>();
+
+        for (Schedule schedule : schedules) {
+            List<Ride> rides = riderDao.findAll().stream().filter(r -> r.getSchedule().equals(schedule)).collect(Collectors.toList());
+            if (!rides.isEmpty()){
+                matchedSchedules.add(schedule);
+            }
+        }
+
+        return matchedSchedules;
     }
 
     @PostMapping("findSchedulesByEmail")
