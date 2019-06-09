@@ -54,8 +54,8 @@ export default (state = {}, action) => {
       }else{return {
         status: "not logged in",
         ride: ['usera', 'userb', 'userc'],
-        matched: ['schedule1', 'schedule2', 'schedule3'],
-        unmatched:['schedule4', 'schedule5', 'schedule6']
+        matched: [],
+        unmatched:[]
       };
     }
   }
