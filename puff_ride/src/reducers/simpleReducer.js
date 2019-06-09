@@ -73,6 +73,11 @@ export default (state = {}, action) => {
         ...state,
         status: "new_schedule"
       }
+    case 'BACK_TO_DASHBOARD':
+      return{
+        ...state,
+        status: "dashboard"
+      }
     default:
       if(state.status ==="logged in"){
         return{
