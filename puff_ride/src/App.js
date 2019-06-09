@@ -5,6 +5,7 @@ import {Redirect} from "react-router-dom"
 import './App.css';
 import {SignUp} from './SignUp'
 import {Login} from './Login'
+import {Schedule} from './Schedule'
 import {DashBoard} from './DashBoard'
 import { simpleAction } from './actions/simpleAction'
 import AppBar from "@material-ui/core/AppBar";
@@ -128,7 +129,13 @@ const mapDispatchToProps = (dispatch) => ({
                 console.log("rides: ", rides)
                 dispatch({type:"RIDE_ACTION", payload: rides});
             })
-    }
+    },
+    scheduleDispatch: (dow, orig, des, time, start, end, driver) => (dispatch({
+        type: "SCHEDULE_ACTION", value : {
+            dow, orig, des, time, start, end, driver
+        }
+    })),
+    addScheduleDispatch: (e) => (dispatch({type:"NEW_SCHEDULE"}))
 });
 
 /* 
@@ -152,10 +159,16 @@ const SignUpWithState = connect(mapStateToProps, mapDispatchToProps)(({signUpDis
     return <SignUp signUpAction={signUpDispatch}/>
 })
 
-const DashBoardWithState = connect(mapStateToProps, mapDispatchToProps)(({dashDispatch, simpleReducer}) => {
+// Schedule wrapper
+const ScheduleWithState = connect(mapStateToProps, mapDispatchToProps)(({scheduleDispatch}) => {
+    console.log("Schedule board hello")
+    return <Schedule scheduleAction={scheduleDispatch}/>
+})
+
+const DashBoardWithState = connect(mapStateToProps, mapDispatchToProps)(({dashDispatch,addScheduleDispatch, simpleReducer}) => {
     console.log("dash boarding hello")
     console.log(simpleReducer)
-    return <DashBoard dashAction={dashDispatch} state = {simpleReducer}/>
+    return <DashBoard dashAction={dashDispatch} state = {simpleReducer} addSchedule={addScheduleDispatch}/>
 })
 
 const useStyles = makeStyles(theme => ({
@@ -247,6 +260,7 @@ class App extends Component {
                 <Route path = "/DashBoard" component={DashBoardWithState}/>
                 <Route path="/SignUp" component={SignUpWithState}/>
                 <Route path="/Login" component={LoginWithState}/>
+                <Route path="/Schedule" component={ScheduleWithState}/>
                 <Route exact path="/" component={LoginWithState}/>
                 <Route path = "/Ride" component={RideWithState}/>
             </Router>
