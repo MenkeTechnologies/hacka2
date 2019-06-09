@@ -39,6 +39,21 @@ export default (state = {}, action) => {
         ...state,
         unmatched: action.payload
       };
+    case 'SCHEDULE_ACTION':
+      console.log("Scheudle action issued")
+      console.log(action.value.time)
+      console.log(action.value.des)
+      console.log(action.value.dow)
+      return {
+        ...state,
+        dow : action.value.dow,
+        orig : action.value.orig,
+        des : action.value.des,
+        time : action.value.time,
+        start : action.value.start,
+        end : action.value.end,
+        driver : action.value.driver
+      }
     case 'LOGGED_IN':
       console.log("logging in")
       return{
@@ -52,6 +67,11 @@ export default (state = {}, action) => {
         ...state,
         status: "ride",
         ride: action.payload
+      }
+    case 'NEW_SCHEDULE':
+      return{
+        ...state,
+        status: "new_schedule"
       }
     default:
       if(state.status ==="logged in"){

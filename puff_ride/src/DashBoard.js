@@ -60,11 +60,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export const DashBoard = ({dashAction, state}) => {
+export const DashBoard = ({dashAction, state, addSchedule}) => {
   const classes = useStyles();
   console.log(state);
 
-  return state.status === "ride" ? (<Redirect to='/Ride'/>) : (
+  return state.status === "new_schedule"? (<Redirect to='Schedule'/>):(state.status === "ride" ? (<Redirect to='/Ride'/>) : (
     <React.Fragment>
       <CssBaseline />
       <main>
@@ -77,7 +77,7 @@ export const DashBoard = ({dashAction, state}) => {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button to="/SignUp" variant="contained" color="primary">
+                  <Button to="/SignUp" variant="contained" color="primary" onClick={addSchedule}>
                     Request Ride
                   </Button>
                 </Grid>
@@ -160,5 +160,5 @@ export const DashBoard = ({dashAction, state}) => {
       </footer>
       {/* End footer */}
     </React.Fragment>
-  );
+  ));
 }
